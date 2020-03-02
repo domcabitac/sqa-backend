@@ -1,4 +1,10 @@
-# sqa-project
+# sqa-backend
+Team Members:    
+- Leon Chow  
+- Dominic Cabitac
+
+## Based off Front End
+## sqa-project
 
 Team Members:  
 - Jon Perry  
