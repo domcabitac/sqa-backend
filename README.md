@@ -1,3 +1,8 @@
+# sqa-backend
+Team Members:    
+- Leon Chow  
+- Dominic Cabitac
+
 # sqa-project
 
 Team Members:  
