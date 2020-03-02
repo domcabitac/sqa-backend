@@ -1,0 +1,6 @@
+login
+john
+passward
+bid
+john
+exit

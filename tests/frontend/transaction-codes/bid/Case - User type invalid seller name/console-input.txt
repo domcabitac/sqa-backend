@@ -1,0 +1,6 @@
+login
+test
+passward
+bid
+wronguser
+exit

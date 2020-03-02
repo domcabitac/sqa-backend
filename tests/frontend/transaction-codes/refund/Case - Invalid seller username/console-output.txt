@@ -1,0 +1,9 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter Buyers Name:
+Enter Sellers Name:
+Error: invalid sellers name
+Enter Command: 

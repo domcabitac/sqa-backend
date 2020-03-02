@@ -1,0 +1,4 @@
+Enter Command: 
+Enter username: 
+ERROR - username is empty
+Enter Command: 

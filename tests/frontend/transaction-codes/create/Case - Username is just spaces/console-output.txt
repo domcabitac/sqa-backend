@@ -1,0 +1,8 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter Username: 
+Error: Username is empty - it must be between 1-15 characters and cannot be only spaces
+Enter Command: 

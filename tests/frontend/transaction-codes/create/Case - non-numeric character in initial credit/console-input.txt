@@ -1,0 +1,9 @@
+login
+bob
+password
+create
+tmpUser
+password
+FS
+-100
+exit

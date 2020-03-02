@@ -1,0 +1,8 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter Username: 
+Error: Username Bob already exists
+Enter Command: 

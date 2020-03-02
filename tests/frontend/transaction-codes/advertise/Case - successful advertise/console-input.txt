@@ -1,0 +1,8 @@
+login
+bob
+password
+advertise
+gloves
+50
+23
+exit

@@ -1,0 +1,24 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+<<<<<<< HEAD
+COMMAND ENTERED refund 
+Error: Invalid transaction code entered
+Enter Command: 
+COMMAND ENTERED bob
+Error: Invalid transaction code entered
+Enter Command: 
+COMMAND ENTERED john
+Error: Invalid transaction code entered
+Enter Command: 
+COMMAND ENTERED 999
+Error: Invalid transaction code entered
+=======
+Enter Buyers Name:
+Enter Sellers Name:
+Enter refund amount:
+Error: Seller does not have sufficient funds for refund
+>>>>>>> origin/ridgesfix
+Enter Command: 

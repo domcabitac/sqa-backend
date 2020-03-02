@@ -1,0 +1,7 @@
+login
+test
+passward
+bid
+john
+iphone 11
+exit

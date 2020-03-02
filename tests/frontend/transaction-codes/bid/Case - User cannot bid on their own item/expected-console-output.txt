@@ -1,0 +1,8 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter the user who listed the item:
+Error: You cannot bid on your own item
+Enter Command: 

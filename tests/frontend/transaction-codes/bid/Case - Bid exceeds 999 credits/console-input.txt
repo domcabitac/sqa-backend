@@ -1,0 +1,8 @@
+login
+bob
+password
+bid
+john
+macbook pro 16 i7 silver 
+999.01
+exit

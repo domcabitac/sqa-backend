@@ -1,0 +1,39 @@
+Enter username: 
+Enter password: 
+Logged in as 'admin'.
+
+Enter username:
+Enter password: 
+Enter account type: 
+Enter initial credit amount:
+FS user 'testUser' (500 credit) was created successfully!
+
+Enter username to delete: 
+'testUser' deleted successfully!
+
+Enter username:
+Enter password: 
+Enter account type: 
+Enter initial credit amount: 0
+FS user 'testerUser' (0 credit) was created successfully!
+
+Enter user to add credit to: 
+Enter credit amount: 
+500 credit added to 'testerUser'!
+
+Enter item name:
+Enter minimum starting bid: 
+Enter number of days until auction ends: 
+'amazing guitar' listed for 50 credits and will end in 50 days
+
+Enter buyer's username:
+Enter seller's username:
+Enter credit to refund from seller to buyer:
+200 credit refunded from 'admin' to 'johnsmith'
+
+Enter item name to bid on:
+Enter seller's username: 
+Enter bid amount: 
+10 credits bid for 'theworsttitemthereis!!' sold by 'johnsmith'
+
+Logout successful

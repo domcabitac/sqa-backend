@@ -1,0 +1,5 @@
+login
+john
+passward
+create
+exit

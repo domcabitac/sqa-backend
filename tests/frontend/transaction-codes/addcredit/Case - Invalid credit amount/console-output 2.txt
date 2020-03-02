@@ -1,0 +1,9 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter Username: 
+Enter credit amount: 
+Error: Max amount exceeded per session. 
+Enter Command: 

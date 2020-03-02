@@ -1,0 +1,8 @@
+login
+bob
+password
+refund
+john
+test
+30000.00
+exit

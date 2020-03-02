@@ -1,0 +1,10 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter item name: 
+Enter minimum bid amount: 
+Enter number of days: 
+ERROR - Max number of auction days is 100
+Enter Command: 

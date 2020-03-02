@@ -1,0 +1,11 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter Username: 
+Enter Password: 
+Enter Account Type for new user: 
+Enter initial credit amount: 
+Error: Credit cannot contain non-numeric characters and must be of the format #.## or #
+Enter Command: 

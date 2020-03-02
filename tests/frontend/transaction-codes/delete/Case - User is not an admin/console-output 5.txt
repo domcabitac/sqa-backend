@@ -1,0 +1,7 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Error: Must be an admin use the 'delete' code
+Enter Command: 

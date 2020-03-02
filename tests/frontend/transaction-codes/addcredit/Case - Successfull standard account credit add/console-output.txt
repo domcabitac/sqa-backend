@@ -1,0 +1,9 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter Username: 
+Enter credit amount: 
+Successfully added 150 credits to user 'bobby'
+Enter Command: 

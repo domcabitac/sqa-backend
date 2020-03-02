@@ -1,0 +1,8 @@
+login
+bob
+password
+refund
+john
+test
+300.00f
+exit

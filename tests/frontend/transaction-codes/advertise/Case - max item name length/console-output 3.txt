@@ -1,0 +1,8 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter item name: 
+Error - Max length of name is 25 characters
+Enter Command: 

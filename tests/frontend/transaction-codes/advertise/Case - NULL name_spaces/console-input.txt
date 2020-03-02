@@ -1,0 +1,6 @@
+login
+bob
+password
+advertise
+
+exit

@@ -1,0 +1,4 @@
+(password is appended to the user accounts file)
+admin___________AA_000100000_password
+johnsmith_______FS_000001000_password
+END__________________________________

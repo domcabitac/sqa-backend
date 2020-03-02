@@ -1,0 +1,11 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter Username: 
+Enter Password: 
+Enter Account Type for new user: 
+Enter initial credit amount: 
+Error: Credit must be a numerical value. For no credit given, enter '0'
+Enter Command: 

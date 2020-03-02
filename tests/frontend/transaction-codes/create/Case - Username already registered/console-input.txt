@@ -1,0 +1,6 @@
+login
+bob
+password
+create
+Bob
+exit

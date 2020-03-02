@@ -1,0 +1,9 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter the user who listed the item:
+Enter the item you would like to bid on:
+Error: 'iphone 11' is not a valid item to bid on
+Enter Command: 

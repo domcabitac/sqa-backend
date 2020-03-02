@@ -1,0 +1,8 @@
+login
+test
+passward
+bid
+john
+macbook pro 16 i7 silver 
+499.99
+exit

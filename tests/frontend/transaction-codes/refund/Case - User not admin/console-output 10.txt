@@ -1,0 +1,7 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Error: User is not an admin
+Enter Command: 

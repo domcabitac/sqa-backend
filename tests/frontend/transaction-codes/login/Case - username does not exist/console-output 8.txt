@@ -1,0 +1,4 @@
+Enter Command: 
+Enter username: 
+ERROR - username does not exist
+Enter Command: 

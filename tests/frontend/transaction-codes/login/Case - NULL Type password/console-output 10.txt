@@ -1,0 +1,5 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+ERROR - password is empty
+Enter Command: 

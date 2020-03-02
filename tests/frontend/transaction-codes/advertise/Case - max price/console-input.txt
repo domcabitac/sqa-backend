@@ -1,0 +1,7 @@
+login
+bob
+password
+advertise
+Toy
+1001
+exit

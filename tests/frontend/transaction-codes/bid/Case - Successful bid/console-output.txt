@@ -1,0 +1,10 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter the user who listed the item:
+Enter the item you would like to bid on:
+Current highest bid is 599.99 credits. Enter your bid:
+You successfully bid 650 credits for macbook pro 16 i7 silver from john
+Enter Command: 

@@ -1,0 +1,122 @@
+../../tests/frontend/transaction-codes/Miscellaneous/Case - user enters invalid code while logged in: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/Miscellaneous/Case - user enters invalid code while logged in: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/Miscellaneous/Case - user enters invalid code while not logged in: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/Miscellaneous/Case - user enters invalid code while not logged in: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/addcredit/Case - Exceeded credit amount: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/addcredit/Case - Exceeded credit amount: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/addcredit/Case - Invalid credit amount: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/addcredit/Case - Invalid credit amount: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/addcredit/Case - Invalid username: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/addcredit/Case - Invalid username: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/addcredit/Case - Successfull admin credit add: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/addcredit/Case - Successfull admin credit add: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/addcredit/Case - Successfull standard account credit add: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/addcredit/Case - Successfull standard account credit add: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/addcredit/Case - User not logged in: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/addcredit/Case - User not logged in: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - NULL name_spaces: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - NULL name_spaces: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - User not logged in: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - User not logged in: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - max auction days: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - max auction days: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - max item name length: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - max item name length: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - max price: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - max price: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - mid bid_NULL value: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - mid bid_NULL value: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - min bid_letter entered: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - min bid_letter entered: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - standard buy account not accepted: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - standard buy account not accepted: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - successful advertise: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/advertise/Case - successful advertise: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/bid/Case - Bid exceeds 999 credits: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/bid/Case - Bid exceeds 999 credits: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/bid/Case - Bid not allowed for StandardSell account: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/bid/Case - Bid not allowed for StandardSell account: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/bid/Case - Successful bid: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/bid/Case - Successful bid: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User cannot bid on their own item: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User cannot bid on their own item: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User enters NULL bid: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User enters NULL bid: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User enters bid equal to current price: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User enters bid equal to current price: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User enters non-numeric bid: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User enters non-numeric bid: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User enters smaller bid: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User enters smaller bid: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User not 5 percent higher and is not an admin: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User not 5 percent higher and is not an admin: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User type invalid seller name: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User type invalid seller name: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User types invalid item name: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/bid/Case - User types invalid item name: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/create/Case - Invalid user type entered: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/create/Case - Invalid user type entered: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/create/Case - Null user type entered: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/create/Case - Null user type entered: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/create/Case - User created successfully: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/create/Case - User created successfully: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/create/Case - User is not an admin: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/create/Case - User is not an admin: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/create/Case - Username already registered: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/create/Case - Username already registered: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/create/Case - Username is NULL: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/create/Case - Username is NULL: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/create/Case - Username is a code: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/create/Case - Username is a code: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/create/Case - Username is just spaces: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/create/Case - Username is just spaces: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/create/Case - Username too long: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/create/Case - Username too long: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/create/Case - initial credit exceeds 999999: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/create/Case - initial credit exceeds 999999: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/create/Case - non-numeric character in initial credit: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/create/Case - non-numeric character in initial credit: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/create/Case - null initial credit entered: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/create/Case - null initial credit entered: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/create/Create - Username already registered (case difference from other test): CONSOLE, PASSED
+../../tests/frontend/transaction-codes/create/Create - Username already registered (case difference from other test): TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/delete/Case - User deletion successful: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/delete/Case - User deletion successful: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/delete/Case - User does not exist: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/delete/Case - User does not exist: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/delete/Case - User is not an admin: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/delete/Case - User is not an admin: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/delete/Case - User not logged in: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/delete/Case - User not logged in: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/delete/Case - User trying to delete self: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/delete/Case - User trying to delete self: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/login/Case - NULL Type password: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/login/Case - NULL Type password: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/login/Case - NULL Type username: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/login/Case - NULL Type username: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/login/Case - password does not match with username: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/login/Case - password does not match with username: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/login/Case - successful login: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/login/Case - successful login: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/login/Case - user cannot be logged in already: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/login/Case - user cannot be logged in already: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/login/Case - username does not exist: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/login/Case - username does not exist: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/logout/Case - successful logout: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/logout/Case - successful logout: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/logout/Case - user must be logged in: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/logout/Case - user must be logged in: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/refund/Case - Invalid buyer username: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/refund/Case - Invalid buyer username: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/refund/Case - Invalid seller username: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/refund/Case - Invalid seller username: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/refund/Case - Successful refund: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/refund/Case - Successful refund: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/refund/Case - User enters NULL credit: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/refund/Case - User enters NULL credit: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/refund/Case - User enters a credit too large: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/refund/Case - User enters a credit too large: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/refund/Case - User enters invalid character in credit: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/refund/Case - User enters invalid character in credit: TRANSACTION, PASSED
+../../tests/frontend/transaction-codes/refund/Case - User not admin: CONSOLE, PASSED
+../../tests/frontend/transaction-codes/refund/Case - User not admin: TRANSACTION, PASSED

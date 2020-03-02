@@ -1,0 +1,11 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter Username: 
+Enter Password: 
+Enter Account Type for new user: 
+Enter initial credit amount: 
+FS user 'tmpUser' (500 credit) created successfully!
+Enter Command: 

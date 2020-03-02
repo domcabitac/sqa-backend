@@ -1,0 +1,10 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter Username: 
+Enter Password: 
+Enter Account Type for new user: 
+Error: 'XX' is not a valid user account type
+Enter Command: 

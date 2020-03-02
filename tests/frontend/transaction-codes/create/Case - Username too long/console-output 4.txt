@@ -1,0 +1,8 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter Username: 
+Error: Username too long - must be between 1-15 characters
+Enter Command: 

@@ -1,0 +1,9 @@
+Enter Command: 
+Enter username: 
+Enter password: 
+Welcome Back!
+Enter Command: 
+Enter item name: 
+Enter minimum bid amount: 
+ERROR - bid must be a numeric value
+Enter Command: 
