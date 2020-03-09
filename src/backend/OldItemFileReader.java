@@ -5,18 +5,18 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-public class TransactionReader {
+public class OldItemFileReader {
     public static void main(String argsv[]) throws IOException {
-        File file = new File("daily-transactions.txt");
+        File file = new File("available-items.txt");
         FileInputStream fin = null;
         try { // create FileInputStream object
             fin = new FileInputStream(file);
-            byte transactionBuffer[] = new byte[(int)file.length()];
+            byte itemBuffer[] = new byte[(int)file.length()];
                     
             // Reads up to certain bytes of data from this input stream into an array of bytes.
-            fin.read(transactionBuffer);
+            fin.read(itemBuffer);
             //create string from byte array
-            String s = new String(transactionBuffer);
+            String s = new String(itemBuffer);
             List<String> data = new Vector<String>();
             data.add(s);
             System.out.println(data);
