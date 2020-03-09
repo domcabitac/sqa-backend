@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class TransactionReader {
+    static List<String> data = new Vector<String>();
     public static void main(String argsv[]) throws IOException {
         File file = new File("daily-transactions.txt");
         FileInputStream fin = null;
@@ -17,7 +18,6 @@ public class TransactionReader {
             fin.read(transactionBuffer);
             //create string from byte array
             String s = new String(transactionBuffer);
-            List<String> data = new Vector<String>();
             data.add(s);
             System.out.println(data);
         } 

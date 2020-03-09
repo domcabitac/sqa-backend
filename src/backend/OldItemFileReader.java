@@ -1,25 +1,34 @@
 import java.io.IOException;
-import java.util.List;
+import java.util.Scanner;
 import java.util.Vector;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
 
 public class OldItemFileReader {
-    public static void main(String argsv[]) throws IOException {
-        File file = new File("available-items.txt");
+    public FileInputStream oldItemReader;
+    public Vector<String> oldItemBuffer = new Vector<String>();
+    public String itemsFileName;
+
+    public void setItemBuffer(Vector<String> oldItemBuffer) {
+        this.oldItemBuffer = oldItemBuffer;
+    }
+
+    public Vector<String> getItemBuffer() {
+        return oldItemBuffer;
+    }
+
+    public Vector<String> readItemFile(String itemsFileName) {
         FileInputStream fin = null;
         try { // create FileInputStream object
-            fin = new FileInputStream(file);
-            byte itemBuffer[] = new byte[(int)file.length()];
-                    
-            // Reads up to certain bytes of data from this input stream into an array of bytes.
-            fin.read(itemBuffer);
-            //create string from byte array
-            String s = new String(itemBuffer);
-            List<String> data = new Vector<String>();
-            data.add(s);
-            System.out.println(data);
+            oldItemReader = new FileInputStream(itemsFileName);
+            Scanner input = new Scanner(oldItemReader);
+            // Reads up to certain bytes of oldItemBuffer from this input stream into an
+            // array of bytes.
+            oldItemReader.read();
+            while (input.hasNextLine()) {
+                oldItemBuffer.add(input.nextLine());
+            }
+            System.out.println(oldItemBuffer);
+            input.close();
         } 
         catch (FileNotFoundException e) {
             System.out.println("File not found" + e);
@@ -37,5 +46,12 @@ public class OldItemFileReader {
                 System.out.println("Error while closing stream: " + ioe);
             }
         }
+        return oldItemBuffer;
+    }
+
+    public static void main(String argsv[]) throws IOException {
+        OldItemFileReader t = new OldItemFileReader();
+        t.readItemFile("available-items.txt");
+        
     }
 }
