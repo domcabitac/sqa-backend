@@ -1,25 +1,34 @@
 import java.io.IOException;
-import java.util.List;
+import java.util.Scanner;
 import java.util.Vector;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
 
 public class OldUserFileReader {
-    public static void main(String argsv[]) throws IOException {
-        File file = new File("current-user-accounts.txt");
+    public FileInputStream oldUserReader;
+    public Vector<String> oldUserBuffer = new Vector<String>();
+    public String usersFileName;
+
+    public void setUserBuffer(Vector<String> oldUserBuffer) {
+        this.oldUserBuffer = oldUserBuffer;
+    }
+
+    public Vector<String> getUserBuffer() {
+        return oldUserBuffer;
+    }
+
+    public Vector<String> readUserFile(String usersFileName) {
         FileInputStream fin = null;
         try { // create FileInputStream object
-            fin = new FileInputStream(file);
-            byte userBuffer[] = new byte[(int)file.length()];
-                    
-            // Reads up to certain bytes of data from this input stream into an array of bytes.
-            fin.read(userBuffer);
-            //create string from byte array
-            String s = new String(userBuffer);
-            List<String> data = new Vector<String>();
-            data.add(s);
-            System.out.println(data);
+            oldUserReader = new FileInputStream(usersFileName);
+            Scanner input = new Scanner(oldUserReader);
+            // Reads up to certain bytes of oldUserBuffer from this input stream into an
+            // array of bytes.
+            oldUserReader.read();
+            while (input.hasNextLine()) {
+                oldUserBuffer.add(input.nextLine());
+            }
+            System.out.println(oldUserBuffer);
+            input.close();
         } 
         catch (FileNotFoundException e) {
             System.out.println("File not found" + e);
@@ -37,5 +46,11 @@ public class OldUserFileReader {
                 System.out.println("Error while closing stream: " + ioe);
             }
         }
+        return oldUserBuffer;
+    }
+
+    public static void main(String argsv[]) throws IOException {
+        OldUserFileReader t = new OldUserFileReader();
+        t.readUserFile("current-user-accounts.txt");
     }
 }
