@@ -1,10 +1,10 @@
-# sqa-backend
+# SQA-Backend
 Team Members:    
 - Leon Chow  
 - Dominic Cabitac
 
-## Phase 4
-This program are to take in 3 input files: MergedTransactions, OldUsers.txt and OldItems.txt and process the merged transactions one by one on the corresponding file that will be determined by a method. After running all transactions, the program will return the updated files associated with an error log for any transaction or file failures. The program is intended to be run by compiling this java file, OutputWriter.java, and running it with java. The program will later be integrated with the frontend to update the files concurrently. 
+# Phase 4
+We have set up 3 reader files: TransactionReader, OldItemFileReader and OldUserFileReader to read each of the respective .txt file (daily-transactions, available-items, current-user-accounts). These readers files will extract whats in the .txt files and place them into 3 seperate buffer vectors for the OutputWriter to use. The OutputWriter take in 3 input files: MergedTransactions, OldUsers.txt and OldItems.txt and process the merged transactions one by one on the corresponding file that will be determined by a method. After running all transactions, the program will return the updated files associated with an error log for any transaction or file failures. The program is intended to be run by compiling this java file, OutputWriter.java, and running it with java. The program will later be integrated with the frontend to update the files concurrently. 
 
 ## What works and what does not work
 
