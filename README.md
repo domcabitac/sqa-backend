@@ -21,11 +21,11 @@ Do note that the entry in the files have to be perfectly spaced out like so, or 
 
 Examples of a transaction and item entry can be seen below:
 
-available-items-test.txt
+available-items-test.txt  
 macbook pro 16 i7 silver  John            NULL            900 000.00  
 Not a less paul guitaree  John            NULL            050 699.99  
 
-daily-transactions.txt
+daily-transactions.txt  
 04 macbook pro 16 i7 silver  john            Bob             700.00  
 03 UOIT Backpack             john            Bob             100 700.00  
 
