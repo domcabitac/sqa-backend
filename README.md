@@ -19,17 +19,17 @@ The program will read in 3 files, `daily-transaction.txt`, `current-user-account
 The nature of this program is still in rapid development. As a result, not all functions will work and the program will only work on precise input. Each class has all the required variables and methods. All the readers are working, but the only writer functions that are working are `writeNewItems()`, `determineTransactionType()` and `bufferNewItems()`. As such, only the transactions that associate items will work right now, which are advertise and bid. If you wish to test the program, you can add a new transaction or item. 
 Do note that the entry in the files have to be perfectly spaced out like so, or the file will not be read correctly. 
 
-Examples of a transaction and item entry can be seen below:
+Examples of a transaction and item entry can be seen below. See `available-items-test.txt` and `daily-transactions.txt` for more examples on spacing.
 <pre>
 available-items-test.txt:
 
-macbook pro 16 i7 silver  John            NULL            900 000.00  
-Not a less paul guitaree  John            NULL            050 699.99  
+macbook pro 16 i7 silver  John            Bob             900 700.00
+Not a less paul guitaree  John            NULL            050 699.99
 
 daily-transactions.txt:
   
-04 macbook pro 16 i7 silver  john            Bob             700.00  
-03 UOIT Backpack             john            Bob             100 700.00  
+04 macbook pro 16 i7 silver  john            Bob             700.00
+03 UOIT Backpack             john            Bob             100 700.00
 </pre>
 ## Based off Front End
 https://github.com/jon-perry/sqa-project
