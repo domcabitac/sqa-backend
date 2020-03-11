@@ -81,8 +81,7 @@ void TransactionProcessor::processDelete(vector<User> &systemUsers, User *curren
     }
 }
 
-void TransactionProcessor::processAdvertise(vector<User> &systemUsers, User *currentUser)
-{
+void TransactionProcessor::processAdvertise(vector<User> &systemUsers, User *currentUser){
     string itemName, floatInput, intInput;
 
     cout << "Enter item name: " << endl;

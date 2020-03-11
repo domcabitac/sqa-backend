@@ -7,3 +7,4 @@ src/frontend/test_results.txt
 src/frontend/diff_log.txt
 src/frontend/daily-transactions.txt
 src/frontend/TEST_RESULTS.csv
+*.class
