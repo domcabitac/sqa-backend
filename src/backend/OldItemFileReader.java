@@ -8,16 +8,7 @@ public class OldItemFileReader {
     public Vector<String> oldItemBuffer = new Vector<String>();
     public String itemsFileName;
 
-    public void setItemBuffer(Vector<String> oldItemBuffer) {
-        this.oldItemBuffer = oldItemBuffer;
-    }
-
-    public Vector<String> getItemBuffer() {
-        return oldItemBuffer;
-    }
-
     public Vector<String> readItemFile(String itemsFileName) {
-        FileInputStream fin = null;
         try { // create FileInputStream object
             oldItemReader = new FileInputStream(itemsFileName);
             Scanner input = new Scanner(oldItemReader);
@@ -28,7 +19,6 @@ public class OldItemFileReader {
                 oldItemBuffer.add(input.nextLine());
             }
             System.out.println(oldItemBuffer);
-            input.close();
         } 
         catch (FileNotFoundException e) {
             System.out.println("File not found" + e);
@@ -38,8 +28,8 @@ public class OldItemFileReader {
         }
         finally { // close the streams using close method
             try {
-                if (fin != null) {
-                    fin.close();
+                if (oldItemReader != null) {
+                    oldItemReader.close();
                 }
             }
             catch (IOException ioe) {
@@ -49,9 +39,9 @@ public class OldItemFileReader {
         return oldItemBuffer;
     }
 
-    public static void main(String argsv[]) throws IOException {
+    /*public static void main(String argsv[]) throws IOException {
         OldItemFileReader t = new OldItemFileReader();
         t.readItemFile("available-items.txt");
         
-    }
+    }*/
 }

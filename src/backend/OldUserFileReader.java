@@ -8,14 +8,6 @@ public class OldUserFileReader {
     public Vector<String> oldUserBuffer = new Vector<String>();
     public String usersFileName;
 
-    public void setUserBuffer(Vector<String> oldUserBuffer) {
-        this.oldUserBuffer = oldUserBuffer;
-    }
-
-    public Vector<String> getUserBuffer() {
-        return oldUserBuffer;
-    }
-
     public Vector<String> readUserFile(String usersFileName) {
         FileInputStream fin = null;
         try { // create FileInputStream object
@@ -49,8 +41,8 @@ public class OldUserFileReader {
         return oldUserBuffer;
     }
 
-    public static void main(String argsv[]) throws IOException {
+    /*public static void main(String argsv[]) throws IOException {
         OldUserFileReader t = new OldUserFileReader();
         t.readUserFile("current-user-accounts.txt");
-    }
+    }*/
 }

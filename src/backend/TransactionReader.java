@@ -12,12 +12,7 @@ public class TransactionReader {
         this.transactionBuffer = transactionBuffer;
     }
 
-    public Vector<String> getTransactionBuffer() {
-        return transactionBuffer;
-    }
-
     public Vector<String> readMergedTransaction(String transactionFileName) {
-        FileInputStream fin = null;
         try { // create FileInputStream object
             transactionReader = new FileInputStream(transactionFileName);
             Scanner input = new Scanner(transactionReader);
@@ -28,7 +23,6 @@ public class TransactionReader {
                 transactionBuffer.add(input.nextLine());
             }
             System.out.println(transactionBuffer);
-            input.close();
         } 
         catch (FileNotFoundException e) {
             System.out.println("File not found" + e);
@@ -38,8 +32,8 @@ public class TransactionReader {
         }
         finally { // close the streams using close method
             try {
-                if (fin != null) {
-                    fin.close();
+                if (transactionReader != null) {
+                    transactionReader.close();
                 }
             }
             catch (IOException ioe) {
@@ -49,8 +43,8 @@ public class TransactionReader {
         return transactionBuffer;
     }
 
-    public static void main(String argsv[]) throws IOException {
+    /*public static void main(String argsv[]) throws IOException {
         TransactionReader t = new TransactionReader();
         t.readMergedTransaction("daily-transactions.txt");
-    }
+    }*/
 }
