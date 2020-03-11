@@ -16,10 +16,6 @@ import java.io.IOException;
         them into their respective output file, */
 public class OutputWriter {
     // public fields
-    // public TransactionReader tReader = new TransactionReader();
-    // public OldItemFileReader iReader = new OldItemFileReader(); 
-    // public OldUserFileReader uReader = new OldUserFileReader();
-    // public Error error = new Error();  
     public Vector<String> oldItemBuffer = new Vector<String>();
     public Vector<String> oldUserBuffer = new Vector<String>();
     public Vector<String> transactionsBuffer = new Vector<String>();
@@ -52,19 +48,22 @@ public class OutputWriter {
     // OutputWriter class method to update items txt file, which will use oldItemBuffer, transactionBuffer and OutputFilepath
     public void bufferNewItems(Vector<String> oldItemBuffer, String currentTransaction) {
         System.out.println("buffering item...\n");
+        // check if current transaction is advertise
         if (currentTransaction.substring(0,2).contains("03")) {
             String newEntry = currentTransaction.substring(3,currentTransaction.length());
             oldItemBuffer.add(newEntry);
+        // check if current transaction is bid
         } else if (currentTransaction.substring(0,2).contains("04")) {
             for (int i = 0; i < oldItemBuffer.size(); i++) {
+                // replace any underscores with spaces
                 currentTransaction = currentTransaction.replace("_", " ");
+                // if the current index of OldItemBuffer is 'END', remove it
                 if (oldItemBuffer.get(i).equals("END")) {
                     System.out.println("end of file");
                     oldItemBuffer.remove(oldItemBuffer.size()-1);
                     break;
                 }
-                System.out.println("buffer1: " + oldItemBuffer.get(i).substring(0,25));
-                System.out.println("buffer2: " + currentTransaction.substring(3,28));
+                // check to see if current item in old item buffer is equal to the item in current transaction
                 if (oldItemBuffer.get(i).substring(0,25).contains(currentTransaction.substring(3,28))) {
                     // Creating new item here with applied transaction
                     String currentItem = oldItemBuffer.get(i).substring(0,25);
@@ -74,9 +73,6 @@ public class OutputWriter {
                     String newBid = currentTransaction.substring(60, 67);
                     String newItem = currentItem + currentSeller + newBidder + currentAuctionDays + newBid;
 
-                    System.out.println("Old Item: " + oldItemBuffer.get(i));
-                    System.out.println("New item: " + newItem);
-
                     // replacing old item with new item
                     oldItemBuffer.set(i, newItem);
                 }
@@ -84,8 +80,7 @@ public class OutputWriter {
         } else {
             System.out.println("Invalid transaction");
         }
-        // TODO: Using the old item buffer, perform transactions from transactionBuffer marked for items, either create or edit a bid. 
-        // Also decrement all auction days in the file by 1
+        // TODO: Also decrement all auction days in the file by 1
     }
     
     // TODO: Writes the final changed user buffer to usersFileName path
@@ -96,17 +91,20 @@ public class OutputWriter {
     // TODO: Writes the final changed item buffer to itemsFileName path
     public void writeNewItems(Vector<String> oldItemsBuffer, String itemsFileName) {
         try {
+            // creates a new file writer and writes to it
             FileWriter oFileWriter = new FileWriter(itemsFileName);
             for (int i = 0; i < oldItemsBuffer.size(); i++) {
                 oFileWriter.write(oldItemsBuffer.get(i) + "\n");
             }
+            // add END to mark the end of the file
             oFileWriter.write("END");
             System.out.println("Writing new items...");
             oFileWriter.close();
+        // exceptions for file not existing, or if there was a problem with writing the file
         } catch (FileNotFoundException e) {
             System.out.println("File not found" + e);
         } catch (IOException ioe) {
-            System.out.println("Exception while reading file " + ioe);
+            System.out.println("Exception while writing file " + ioe);
         }
     }
 
@@ -115,7 +113,6 @@ public class OutputWriter {
     public void determineTransactionType(Vector<String> oldUserBuffer, Vector<String> oldItemBuffer, Vector<String> 
         transactionsBuffer) {
         for (int i = 0; i < transactionsBuffer.size(); i++) {
-            System.out.println("Current code: " + transactionsBuffer.get(i).substring(0,2));
             // TODO: takes in the current transaction from the buffer, and determines if its user or items file affected
             if (transactionsBuffer.get(i).substring(0,2).contains("01") || transactionsBuffer.get(i).substring(0,2).contains("02")  || 
                 transactionsBuffer.get(i).substring(0,2).contains("04") || transactionsBuffer.get(i).substring(0,2).contains("05") || transactionsBuffer.get(i).substring(0,2).contains("06")) {
@@ -170,14 +167,16 @@ public class OutputWriter {
         try {
             // If user does not run program with 3 arguments
             if (argv.length < 3) {
-                throw new Exception("ERROR: Not enough arguments. Usage: java OutputWriter.java <TransactionFile.txt> <UserFile.txt> <ItemFile.txt>"); 
+                throw new Exception("ERROR: Not enough arguments. Usage: java OutputWriter <TransactionFile.txt> <UserFile.txt> <ItemFile.txt>"); 
             } else {
+                
                 // creating instances of classes here to be used for file reading and writing
                 TransactionReader tReader = new TransactionReader();
                 OldUserFileReader uReader = new OldUserFileReader();
                 OldItemFileReader iReader = new OldItemFileReader();
                 OutputWriter oWriter = new OutputWriter();
 
+                // creating buffers here to be used by oWriter
                 Vector<String> transactionsBuffer = tReader.readMergedTransaction(argv[0]);
                 Vector<String> oldUserBuffer = uReader.readUserFile(argv[1]);
                 Vector<String> oldItemBuffer = iReader.readItemFile(argv[2]);
@@ -192,8 +191,10 @@ public class OutputWriter {
                 System.out.println("Changed buffers: \n\n\n" + oldUserBuffer);
                 System.out.println(oldItemBuffer);
 
+                // writes the new items to the file
                 oWriter.writeNewItems(oldItemBuffer, argv[2]);
             }
+            // exception with too few arguments
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
