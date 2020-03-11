@@ -14,15 +14,6 @@ public class OldItemFileReader {
     public Vector<String> oldItemBuffer = new Vector<String>();
     public String itemsFileName;
 
-    // Constructor for the class setItemBuffer
-    public void setItemBuffer(Vector<String> oldItemBuffer) {
-        this.oldItemBuffer = oldItemBuffer;
-    }
-
-    public Vector<String> getItemBuffer() {
-        return oldItemBuffer;
-    }
-
     // this class reads the content from the .txt file and places it into a buffer vector
     public Vector<String> readItemFile(String itemsFileName) {
         // oldItemReader defining new StringBuilder with the itemFileName

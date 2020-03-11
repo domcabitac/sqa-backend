@@ -14,15 +14,6 @@ public class TransactionReader {
     public Vector<String> transactionBuffer = new Vector<String>();
     public String transactionFileName;
 
-    // Constructor for the class setTransactionBuffer
-    public void setTransactionBuffer(Vector<String> transactionBuffer) {
-        this.transactionBuffer = transactionBuffer;
-    }
-
-    public Vector<String> getTransactionBuffer() {
-        return transactionBuffer;
-    }
-
     // this class reads the content from the .txt file and places it into a buffer vector
     public Vector<String> readMergedTransaction(String transactionFileName) {
         // transactionReader defining new StringBuilder with the transactionFileName

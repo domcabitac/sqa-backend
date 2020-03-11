@@ -10,6 +10,7 @@ import java.util.Vector;
 import java.io.*;
 
 public class OldUserFileReader {
+    // class members
     public StringBuilder oldUserReader;
     public Vector<String> oldUserBuffer = new Vector<String>();
     public String usersFileName;

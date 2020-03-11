@@ -24,21 +24,6 @@ public class OutputWriter {
     public String transactionType;
     public String OutputFilepath;
 
-    // OutputWriter class method to set transactionsBuffer, which will be used to update item and user files
-    public void setMergedTransactions(Vector<String> transactionsBuffer) {
-        this.transactionsBuffer = transactionsBuffer;
-    }
-    
-    // OutputWriter class method to set oldItemBuffer, which will be used as a base to write new item entries
-    public void setOldItems(Vector<String> oldItemBuffer) {
-        this.oldItemBuffer = oldItemBuffer;
-    } 
-    
-    // OutputWriter class method to set oldUserBuffer, which will be used as a base to write new user entries
-    public void setOldUser(Vector<String> oldUserBuffer) {
-        this.oldUserBuffer = oldUserBuffer;
-    } 
-
     // OutputWriter class method to update users txt file, which will use oldUserBuffer, transactionBuffer and OutputFilepath
     public void bufferNewUsers(Vector<String> oldUserBuffer, String currentTransaction) {
         // TODO: Using the old user buffer, perform transactions from transactionBuffer marked for users, either create, delete or edit a user 
