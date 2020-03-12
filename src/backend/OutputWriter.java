@@ -8,9 +8,6 @@ import java.io.*;
 import java.util.*; 
 import java.io.File;  
 import java.io.IOException; 
-//import reader.TransactionReader;
-//import reader.OldItemFileReader;
-// import OldUserFileReader.java;
 
 /*  The intention of this class is to take in all of the stored buffers (transaction, old item and old users) and outputs 
         them into their respective output file, */
@@ -22,7 +19,6 @@ public class OutputWriter {
     public Vector<String> newUserBuffer = new Vector<String>();
     public Vector<String> newItemBuffer = new Vector<String>();
     public String transactionType;
-    public String OutputFilepath;
 
     // OutputWriter class method to update users txt file, which will use oldUserBuffer, transactionBuffer and OutputFilepath
     public void bufferNewUsers(Vector<String> oldUserBuffer, String currentTransaction) {
@@ -137,14 +133,8 @@ public class OutputWriter {
     } 
     
     // OutputWriter class method to log errors to a file, which will use currentTransaction, OutputFilepath and the Error class
-    public void logInformation(String OutputFilepath, Error error) {
+    public void logInformation(String errorMsg, String transactionType) {
         System.out.println("Logging error...");
-        // TODO: if an error has occurred, log the information to a file and print it out to a user
-        /*File oFile = new File("log.txt");
-        oFile.createNewFile(); // if file already exists will do nothing 
-        FileOutputStream oFile = new FileOutputStream(oFile, false);
-        oFile.write(error.errorMsg + "\n");
-        System.out.println(error.errorMsg);*/
     } 
 
     // main function to execute the auction service backend, writeUsers works
@@ -165,10 +155,6 @@ public class OutputWriter {
                 Vector<String> transactionsBuffer = tReader.readMergedTransaction(argv[0]);
                 Vector<String> oldUserBuffer = uReader.readUserFile(argv[1]);
                 Vector<String> oldItemBuffer = iReader.readItemFile(argv[2]);
-
-                // Testing transactions that only affect users here
-                //Vector<String> newUserbuffer = bufferNewUsers(oldUserBuffer, transactionsBuffer); 
-                //writeNewUsers(newUserBuffer, argv[1]);
 
                 // Testing transaction that olny affect items here
                 oWriter.determineTransactionType(oldUserBuffer, oldItemBuffer, transactionsBuffer);
