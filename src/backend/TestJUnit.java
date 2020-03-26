@@ -57,6 +57,17 @@ public class TestJUnit {
         Vector<String> oldItemBuffer = i.readItemFile("available-items-test.txt");
 
 
-        assertEquals("", w.writeNewItems(oldItemBuffer, "available-items-test.txt"));
+        assertEquals("Writing new items...", w.writeNewItems(oldItemBuffer, "available-items-test.txt"));
+    }
+
+    @Test
+    public void WritingNewUsersTest() {
+        OldUserFileReader u = new OldUserFileReader();
+        OutputWriter w = new OutputWriter();
+
+        Vector<String> oldItemBuffer = u.readUserFile("current-user-accounts.txt");
+
+
+        assertEquals("Writing new users...", w.writeNewUsers(oldUserBuffer, "current-user-accounts.txt"));
     }
 }
