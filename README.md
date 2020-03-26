@@ -3,6 +3,10 @@ Team Members:
 - Leon Chow  
 - Dominic Cabitac
 
+# Phase 5
+To compile and run the program, execute the following commands in the `sqa-backend directory`:
+1. `make run`
+
 # Phase 4
 The purpose of this program is to perform the backend functions for the online auction house experience. The intentions of this program are to take in 3 input files: MergedTransactions.txt, OldUsers.txt and OldItems.txt, and place them into 3 seperate buffer vectors for the OutputWriter to use. The OutputWriter will process the merged transactions one by one on the corresponding file that will be determined by a method. After running all transactions, the program will return the updated files associated with an error log for any transaction or file failures. The program is intended to be run by compiling this java file, OutputWriter.java, and running it with java. The program will later be integrated with the frontend to update the files concurrently. 
 
