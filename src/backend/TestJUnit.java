@@ -15,25 +15,41 @@ public class TestJunit {
     @Test
     public void ReadingUserFileTest() {
         OldUserFileReader u = new OldUserFileReader();
-        String testUser = "[Bob             AA 0000005.00 password, Test            FS 0020005.10 passward, John            FS 0000000.00 passward, Mart            BS 0000000.00 password, bobby           SS 0000000.00 password, END]";
+        Vector<String> testUser = new Vector<String>();
+        
+        testUser.add("Bob             AA 0000005.00 password");
+        testUser.add("Test            FS 0020005.10 passward");
+        testUser.add("John            FS 0000000.00 passward");
+        testUser.add("Mart            BS 0000000.00 password");
+        testUser.add("bobby           SS 0000000.00 password");
+        testUser.add("END");
 
-        assertEquals(testUser, u.readUserFile("current-user-accounts.txt").toString());
+        assertEquals(testUser, u.readUserFile("current-user-accounts.txt"));
     }
 
     @Test
     public void ReadingItemFileTest() {
         OldItemFileReader i = new OldItemFileReader();
-        String testItem = "[macbook pro 16 i7 silver  John            Bob             900 700.00, Not a less paul guitaree  John            NULL            050 699.99, UOIT Water Bottle         John            NULL            020 599.99, UOIT Backpack             john            Bob             100 700.00, UOIT Backpack             john            Bob             100 700.00, END]";
+        Vector<String> testItem = new Vector<String>();
 
-        assertEquals(testItem, i.readItemFile("available-items-test.txt").toString());
+        testItem.add("macbook pro 16 i7 silver  John            Bob             900 700.00");
+        testItem.add("Not a less paul guitaree  John            NULL            050 699.99");
+        testItem.add("UOIT Water Bottle         John            NULL            020 599.99");
+        testItem.add("UOIT Backpack             john            Bob             100 700.00");
+        testItem.add("UOIT Backpack             john            Bob             100 700.00");
+        testItem.add("END");
+
+        assertEquals(testItem, i.readItemFile("available-items-test.txt"));
     }
 
     @Test
     public void ReadingTransFileTest() {
         TransactionReader t = new TransactionReader();
-        String testTrans = "[04 macbook pro 16 i7 silver  john            Bob             700.00, 03 UOIT Backpack             john            Bob             100 700.00]";
-        
-        assertEquals(testTrans, t.readMergedTransaction("daily-transactions.txt").toString());
+        Vector<String> testTrans = new Vector<String>();
+
+        testTrans.add("04 macbook pro 16 i7 silver  john            Bob             700.00");
+        testTrans.add("03 UOIT Backpack             john            Bob             100 700.00");
+        assertEquals(testTrans, t.readMergedTransaction("daily-transactions.txt"));
     }
 
     // Not complete yet in OutputWriter.java
@@ -44,12 +60,13 @@ public class TestJunit {
     //     assertEquals("", w.bufferNewUsers());
     // }
 
-    @Test
-    public void BuffingNewItemTest() {
-        OutputWriter w = new OutputWriter();
-
-        assertEquals("", w.bufferNewItems());
-    }
+    // @Test
+    // public void BuffingNewItemTest() {
+    //     OutputWriter w = new OutputWriter();
+    //     String newItemBuffer = "macbook pro 16 i7 silver  John            Bob             900 700.00";
+    //     String currentTransaction;
+    //     assertEquals("", w.bufferNewItems(newItemBuffer, currentTransaction));
+    // }
 
     // @Test
     // public void WritingNewItemsTest() {
