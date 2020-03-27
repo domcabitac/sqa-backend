@@ -339,7 +339,7 @@ public class OutputWriter {
                         double sellerCredit = Double.parseDouble((newUserBuffer.get(sellerIndex)).substring(20, 26));
                         double buyerCredit = Double.parseDouble((newUserBuffer.get(buyerIndex)).substring(20, 26));
                         // check if seller does not exceed max credits
-                        } else if (sellerCredit + Double.parseDouble(winningBid) > 999999) {
+                        if (sellerCredit + Double.parseDouble(winningBid) > 999999) {
                             System.out.println("ERROR: Seller has exceed maximum credits! Transaction rejected and item deleted! Type: Transaction");
                         } else {
                             double newSellerCredit = sellerCredit + Double.parseDouble(winningBid);
@@ -415,7 +415,7 @@ public class OutputWriter {
         for (int i = 0; i < transactionsBuffer.size(); i++) {
             System.out.println("Transaction: " + transactionsBuffer.get(i));
             // TODO: takes in the current transaction from the buffer, and determines if its user or items file affected
-            if (transactionsBuffer.get(i).substring(0,2).contains("01") || transactionsBuffer.get(i).substring(0,2).contains("02")  || 
+            if (transactionsBuffer.get(i).substring(0,2).contains("01") || transactionsBuffer.get(i).substring(0,2).contains("02") || 
                 transactionsBuffer.get(i).substring(0,2).contains("04") || transactionsBuffer.get(i).substring(0,2).contains("05") || 
                 transactionsBuffer.get(i).substring(0,2).contains("06")) {
                 System.out.println("Writing to users...");
