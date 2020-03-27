@@ -4,4 +4,5 @@ John            FS 0000000.00 passward
 Mart            BS 0000000.00 password
 bobby           BS 0000500.00 password
 testerUser      BS 0010000.00 password
+testUser        FS 0000005.00 password
 END
