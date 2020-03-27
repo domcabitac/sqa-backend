@@ -74,6 +74,13 @@ public class TestJunit {
         Vector<String> testTrans = new Vector<String>();
 
         testTrans.add("01_testUser________FS_000000500");
+        testTrans.add("02_testUser________FS_000000500");
+        testTrans.add("01_testerUser______BS_000000000");
+        testTrans.add("06_testerUser______BS_000000500");
+        testTrans.add("03_amazing_guitar____________admin___________050_050.00");
+        testTrans.add("05_John____________Bob_____________000002.00");
+        testTrans.add("04_UOIT_Backpack_____________johnsmith_______admin___________010.00");
+        testTrans.add("00");
 
         assertEquals(testTrans, i.readMergedTransaction("daily-transactions.txt"));
     }
