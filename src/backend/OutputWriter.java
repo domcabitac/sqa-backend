@@ -29,7 +29,7 @@ public class OutputWriter {
         if (newUserBuffer.lastElement().trim().equals("END")) {
             newUserBuffer.remove(newUserBuffer.lastElement());
         }
-        // check if current transaction is create
+        // check if current transaction is CREATE
         if (currentTransaction.substring(0,2).contains("01")) {
             int index = -1;
             
@@ -53,7 +53,7 @@ public class OutputWriter {
                 currentUser = currentTransaction.substring(3, 29) + ".00 password";
                 newUserBuffer.add(currentUser);
             } 
-        // check if current transaction is delete
+        // check if current transaction is DELETE
         } else if (currentTransaction.substring(0,2).contains("02")) {
             int index = -1;
             
@@ -76,9 +76,9 @@ public class OutputWriter {
             } else {
                 System.out.println("ERROR: User does not exist! Transaction rejected! Type: Delete");
             }  
-        // check if current transaction is bid
+        // check if current transaction is BID
         } else if (currentTransaction.substring(0,2).contains("04")) {
-            String buyer = currentTransaction.substring(46, 61);
+            String buyer = currentTransaction.substring(45, 60);
             String bid = currentTransaction.substring(61, 67);
 
             int index = -1;
@@ -96,8 +96,8 @@ public class OutputWriter {
             // check if user exists 
             if (index >= 0) {
                 double newCredit = Double.parseDouble(newUserBuffer.get(index).substring(20, 26)) - Double.parseDouble(bid); 
-                // if credits are greater than 0
-                if (newCredit > 0) {
+                // if credits after bidding is 0 or greater
+                if (newCredit >= 0) {
                     char[] zeroes = new char[9 - (Double.toString(newCredit)).length()];
                     Arrays.fill(zeroes, '0');
                     String buyerZeroes = new String(zeroes); 
@@ -106,9 +106,9 @@ public class OutputWriter {
                     String newUser = newUserBuffer.get(index).substring(0, 19) + buyerZeroes + Double.toString(newCredit) + "0 " + newUserBuffer.get(index).substring(30, 38); 
                     System.out.println("newUser: " + newUser);
                     newUserBuffer.set(index, newUser);  
-                } else {
+                } else if (newCredit < 0) {
                     System.out.println("ERROR: Not enough credits! Type: Bid");
-                }
+                } 
             }
         // check if current transaction is REFUND
         } else if (currentTransaction.substring(0,2).contains("05")) {
@@ -119,8 +119,8 @@ public class OutputWriter {
             String seller = currentTransaction.substring(19, 34);
             String amount = currentTransaction.substring(35, 43);
             
-            System.out.println(seller.replace(" ", "_"));
-            System.out.println(buyer.replace(" ", "_"));
+            //System.out.println(seller.replace(" ", "_"));
+            //System.out.println(buyer.replace(" ", "_"));
 
             // loop to assign the sellerindex of the matching user
             for (int j = 0; j < newUserBuffer.size()-1; j++) {
@@ -135,8 +135,8 @@ public class OutputWriter {
 
             // loop to assign the buyerindex of the matching user
             for (int j = 0; j < newUserBuffer.size()-1; j++) {
-                System.out.println(buyer.replace(" ", "_"));
-                System.out.println(newUserBuffer.get(j).substring(0, 15).replace(" ", "_"));
+                //System.out.println(buyer.replace(" ", "_"));
+                //System.out.println(newUserBuffer.get(j).substring(0, 15).replace(" ", "_"));
                 if ((newUserBuffer.get(j).substring(0, 15)).equals(buyer)) {
                     System.out.println("b index: " + j);
                     buyerIndex = j;
@@ -154,14 +154,15 @@ public class OutputWriter {
                 // check if buyer is not at max credits
                 } else if (buyerCredit + Double.parseDouble(amount) > 999999) {
                     System.out.println("ERROR: Seller has exceed maximum credits! Transaction rejected and item deleted! Type: Refund");
+                // otherwise, run the transaction and process it 
                 } else {
-                    System.out.println("Here");
                     double newSellerCredit = sellerCredit + Double.parseDouble(amount);
                     double newBuyerCredit = buyerCredit - Double.parseDouble(amount);
 
                     //System.out.println("New Buyer Credit: " + newBuyerCredit);
                     //System.out.println("New Seller Credit: " + newSellerCredit);
 
+                    // Zero formating for both seller and buyer
                     char[] sellerZeroes = new char[7 - (Double.toString(newSellerCredit)).length()];
                     Arrays.fill(sellerZeroes, '0');
                     String extraSellerZero = new String(sellerZeroes); 
@@ -186,7 +187,7 @@ public class OutputWriter {
             } else {
                 System.out.println("ERROR: Buyer or Seller does not exist! Transaction rejected and item deleted! Type: Transaction");
             }
-        // check if transaction is add credit
+        // check if transaction is ADD CREDIT
         } else if (currentTransaction.substring(0,2).contains("06")) {
             String user = currentTransaction.substring(3, 18);
             String credits = currentTransaction.substring(23, 31);
@@ -205,8 +206,11 @@ public class OutputWriter {
             }
             // check if user exists
             if (index > 0) {
+                // check that the added credits doesn't exceed over 999999
                 if (Double.parseDouble(newUserBuffer.get(index).substring(20, 30)) + Double.parseDouble(credits) < 999999) {
                     Double newCredits = (Double.parseDouble(newUserBuffer.get(index).substring(20, 30)) + Double.parseDouble(credits));
+                    
+                    // new credit zero formatting
                     char[] zeroes = new char[8 - (Double.toString(newCredits)).length()];
                     Arrays.fill(zeroes, '0');
                     String extraZeroes = new String(zeroes); 
@@ -215,12 +219,15 @@ public class OutputWriter {
                     String newUser = newUserBuffer.get(index).substring(0, 20) + extraZeroes + newCredits + "0" + newUserBuffer.get(index).substring(29, 38);
                     newUserBuffer.set(index, newUser);
                 } else {
+                    // max credit error
                     System.out.println("ERROR: Exceeding max credits! Type: Add Credit");
                 }
             } else {
+                // user does not exist error 
                 System.out.println("ERROR: User not found! Type: Add Credit");
             }
         } else {
+            // catch all error if no transactions have occurred
             System.out.println("ERROR: Invalid Transaction! Type: Transaction");
         }
     }
@@ -240,7 +247,7 @@ public class OutputWriter {
                 if (newItemBuffer.get(i).trim().equals("END")) {
                     System.out.println("end of file");
                     System.out.println("Removing " + (newItemBuffer.size() - 1));
-                    newItemBuffer.remove(newItemBuffer.size());
+                    newItemBuffer.remove(newItemBuffer.size()-1);
                     break;
                 }
                 // check to see if current item in new item buffer is equal to the item in current transaction
@@ -285,6 +292,7 @@ public class OutputWriter {
         } catch (IOException ioe) {
             System.out.println("Exception while writing file " + ioe);
         }
+        // test return
         return newUserBuffer;
     }
 
@@ -397,7 +405,6 @@ public class OutputWriter {
                     oFileWriter.write("END");
                 }
             }
-            // add END to mark the end of the file, also check if the transaction file is not empty, otherwise two END will appear
 
             System.out.println("Writing new items...");
             oFileWriter.close();
@@ -407,6 +414,7 @@ public class OutputWriter {
         } catch (IOException ioe) {
             System.out.println("Exception while writing file " + ioe);
         }
+        // test return
         return newItemBuffer;
     }
 
@@ -415,12 +423,14 @@ public class OutputWriter {
     public Vector<String> determineTransactionType(Vector<String> newUserBuffer, Vector<String> newItemBuffer, Vector<String> transactionsBuffer) {
         for (int i = 0; i < transactionsBuffer.size(); i++) {
             System.out.println("Transaction: " + transactionsBuffer.get(i));
-            // TODO: takes in the current transaction from the buffer, and determines if its user or items file affected
+            // takes in the current transaction from the transaction buffer, and determines if its user or items file affected
+            // transactions that affect users are Create, Delete, Refund, Bid and Add Credit
             if (transactionsBuffer.get(i).substring(0,2).contains("01") || transactionsBuffer.get(i).substring(0,2).contains("02") || 
                 transactionsBuffer.get(i).substring(0,2).contains("04") || transactionsBuffer.get(i).substring(0,2).contains("05") || 
                 transactionsBuffer.get(i).substring(0,2).contains("06")) {
                 System.out.println("Writing to users...");
                 bufferNewUsers(newUserBuffer, transactionsBuffer.get(i));
+            // transactions that affect items are bid and advertise
             } if (transactionsBuffer.get(i).substring(0,2).contains("03") || transactionsBuffer.get(i).substring(0,2).contains("04")) {
                 System.out.println("Writing to items...");
                 bufferNewItems(newItemBuffer, transactionsBuffer.get(i));
@@ -459,8 +469,8 @@ public class OutputWriter {
                 oWriter.determineTransactionType(newUserBuffer, newItemBuffer, transactionsBuffer);
 
                 // writes the new items
-                System.out.println(oWriter.writeNewItems(transactionsBuffer, newItemBuffer, newUserBuffer, argv[2]));
-                System.out.println(oWriter.writeNewUsers(transactionsBuffer, newUserBuffer, argv[1]));
+                System.out.println("\n" + oWriter.writeNewItems(transactionsBuffer, newItemBuffer, newUserBuffer, argv[2]));
+                System.out.println("\n" + oWriter.writeNewUsers(transactionsBuffer, newUserBuffer, argv[1]));
             }
             // exception with too few arguments
         } catch (Exception ex) {
