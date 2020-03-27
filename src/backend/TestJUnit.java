@@ -18,11 +18,12 @@ public class TestJunit {
         OldUserFileReader u = new OldUserFileReader();
         Vector<String> testUser = new Vector<String>();
         
-        testUser.add("Bob             AA 0000005.00 password");
+        testUser.add("Bob             AA 0000600.00 password");
         testUser.add("Test            FS 0020005.10 passward");
         testUser.add("John            FS 0000000.00 passward");
         testUser.add("Mart            BS 0000000.00 password");
-        testUser.add("bobby           SS 0000000.00 password");
+        testUser.add("bobby           BS 0000500.00 password");
+        testUser.add("testerUser      BS 0000500.00 password");
         testUser.add("END");
 
         assertEquals(testUser, u.readUserFile("current-user-accounts.txt"));
@@ -73,9 +74,9 @@ public class TestJunit {
 
     // Testing, not working yet
     @Test
-    public void writeNewItemsTest() {
+    public void writeNewUserTest() {
         OutputWriter oWriter = new OutputWriter();
-        Vector<String> testTransBuffer = new Vector<String>();
+        String testTransBuffer = "04 macbook pro 16 i7 silver  john            Bob             700.00, 03 UOIT Backpack             john            Bob             100 700.00";
         Vector<String> testItemBuffer = new Vector<String>();
         Vector<String> testUserBuffer = new Vector<String>();
 
@@ -93,16 +94,16 @@ public class TestJunit {
         testItemBuffer.add("UOIT Backpack             john            Bob             100 700.00");
         testItemBuffer.add("END");
 
-        testTransBuffer.add("04 macbook pro 16 i7 silver  john            Bob             700.00");
-        testTransBuffer.add("03 UOIT Backpack             john            Bob             100 700.00");
+        // testTransBuffer.add("04 macbook pro 16 i7 silver  john            Bob             700.00");
+        // testTransBuffer.add("03 UOIT Backpack             john            Bob             100 700.00");
         
         try {
             PrintWriter pw = new PrintWriter( new File("info.txt") );
-            pw.write(testItemBuffer.toString());
+            pw.write(testUserBuffer.toString());
             pw.close();
         } catch (IOException ioe ) { ioe.printStackTrace(); }
 
-        assertTrue("The item files are different", FileUtils.contentEquals("available-items-test.txt", oWriter.writeNewItems(testTransBuffer, testItemBuffer, "info.txt")));
+        assertTrue("The item files are different", FileUtils.contentEquals("current-user-accounts.txt", oWriter.bufferNewUsers(testUserBuffer, testTransBuffer)));
     }
     
     // @Test

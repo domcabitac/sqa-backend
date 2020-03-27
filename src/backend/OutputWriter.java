@@ -339,7 +339,7 @@ public class OutputWriter {
                         double sellerCredit = Double.parseDouble((newUserBuffer.get(sellerIndex)).substring(20, 26));
                         double buyerCredit = Double.parseDouble((newUserBuffer.get(buyerIndex)).substring(20, 26));
                         // check if seller does not exceed max credits
-                        } else if (sellerCredit + Double.parseDouble(winningBid) > 999999) {
+                        } if (sellerCredit + Double.parseDouble(winningBid) > 999999) {
                             System.out.println("ERROR: Seller has exceed maximum credits! Transaction rejected and item deleted! Type: Transaction");
                         } else {
                             double newSellerCredit = sellerCredit + Double.parseDouble(winningBid);
@@ -384,7 +384,7 @@ public class OutputWriter {
                     // create the new item and overwrite the buffer with it
                     String newItem = newItemBuffer.get(i).substring(0, 58) + extraZero + newAuctionDays + newItemBuffer.get(i).substring(61, 68);
                     newItemBuffer.set(i, newItem);
-                }
+                // }
                 System.out.println(newItemBuffer.get(i));
             }
 
