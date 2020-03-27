@@ -90,9 +90,9 @@ public class TestJunit {
     @Test
     public void ReadingTransactionFileTest2() {
         TransactionReader i = new TransactionReader();
-        Vector<String> testTrans = new Vector<String>();
+        Vector<String> testTrans2 = new Vector<String>();
 
-        assertEquals(testTrans, i.readMergedTransaction("daily-transactions.txt"));
+        assertEquals(testTrans2, i.readMergedTransaction("fakeDailyTrans.txt"));
     }
     
     // Test to see if writer is outputing right values
@@ -139,6 +139,13 @@ public class TestJunit {
         testUserBuffer.add("testUser        FS 0000005.00 password");
 
         testTransBuffer.add("01_testUser________FS_000000500");
+        testTransBuffer.add("02_testUser________FS_000000500");
+        testTransBuffer.add("01_testerUser______BS_000000000");
+        testTransBuffer.add("06_testerUser______BS_000000500");
+        testTransBuffer.add("03_amazing_guitar____________admin___________050_050.00");
+        testTransBuffer.add("05_John____________Bob_____________000002.00");
+        testTransBuffer.add("04_UOIT_Backpack_____________johnsmith_______admin___________010.00");
+        testTransBuffer.add("00");
     
         assertEquals(testItemBuffer, iWriter.writeNewItems(testTransBuffer, testItemBuffer, testUserBuffer, "available-items-test.txt"));
     }
