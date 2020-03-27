@@ -23,7 +23,8 @@ public class TestJunit {
         testUser.add("John            FS 0000000.00 passward");
         testUser.add("Mart            BS 0000000.00 password");
         testUser.add("bobby           BS 0000500.00 password");
-        testUser.add("testerUser      BS 0000500.00 password");
+        testUser.add("testerUser      BS 0010000.00 password");
+        testUser.add("testUser        FS 0000005.00 password");
         testUser.add("END");
 
         assertEquals(testUser, u.readUserFile("current-user-accounts.txt"));
@@ -34,78 +35,61 @@ public class TestJunit {
         OldItemFileReader i = new OldItemFileReader();
         Vector<String> testItem = new Vector<String>();
 
-        testItem.add("macbook pro 16 i7 silver  John            Bob             900 700.00");
-        testItem.add("Not a less paul guitaree  John            NULL            050 699.99");
-        testItem.add("UOIT Water Bottle         John            NULL            020 599.99");
-        testItem.add("UOIT Backpack             john            Bob             100 700.00");
-        testItem.add("UOIT Backpack             john            Bob             100 700.00");
-        testItem.add("END");
+            testItem.add("macbook pro 16 i7 silver  John            Bob             898 700.00");
+            testItem.add("Not a less paul guitaree  John            NULL            048 699.99");
+            testItem.add("UOIT Water Bottle         John            NULL            018 599.99");
+            testItem.add("UOIT Backpack             john            Bob             098 700.00");
+            testItem.add("UOIT Backpack             john            Bob             098 700.00");
+            testItem.add("END");
 
         assertEquals(testItem, i.readItemFile("available-items-test.txt"));
     }
 
     @Test
-    public void ReadingTransFileTest() {
-        TransactionReader t = new TransactionReader();
-        Vector<String> testTrans = new Vector<String>();
-
-        testTrans.add("04 macbook pro 16 i7 silver  john            Bob             700.00");
-        testTrans.add("03 UOIT Backpack             john            Bob             100 700.00");
-        assertEquals(testTrans, t.readMergedTransaction("daily-transactions.txt"));
-    }
-
-    // Not complete yet in OutputWriter.java
-    // @Test
-    // public void BuffingNewUserTest() {
-    //     OutputWriter w = new OutputWriter();
-
-    //     assertEquals("", w.bufferNewUsers());
-    // }
-
-    // @Test
-    // public void BuffingNewItemTest() {
-    //     OutputWriter w = new OutputWriter();
-    //     Vector<String> newItemBuffer = new Vector<String>();
-
-    //     newItemBuffer.add("macbook pro 16 i7 silver  John            Bob             900 700.00");
-    //     String currentTransaction;
-    //     assertEquals("", w.bufferNewItems(newItemBuffer, currentTransaction));
-    // }
-
-    // Testing, not working yet
-    @Test
     public void writeNewUserTest() {
         OutputWriter oWriter = new OutputWriter();
-        String testTransBuffer = "04 macbook pro 16 i7 silver  john            Bob             700.00, 03 UOIT Backpack             john            Bob             100 700.00";
-        Vector<String> testItemBuffer = new Vector<String>();
+        Vector<String> testTransBuffer = new Vector<String>();
         Vector<String> testUserBuffer = new Vector<String>();
 
-        testUserBuffer.add("Bob             AA 0000005.00 password");
+        testUserBuffer.add("Bob             AA 0000600.00 password");
         testUserBuffer.add("Test            FS 0020005.10 passward");
         testUserBuffer.add("John            FS 0000000.00 passward");
         testUserBuffer.add("Mart            BS 0000000.00 password");
-        testUserBuffer.add("bobby           SS 0000000.00 password");
-        testUserBuffer.add("END");
+        testUserBuffer.add("bobby           BS 0000500.00 password");
+        testUserBuffer.add("testerUser      BS 0010000.00 password");
+        testUserBuffer.add("testUser        FS 0000005.00 password");
         
-        testItemBuffer.add("macbook pro 16 i7 silver  John            Bob             900 700.00");
-        testItemBuffer.add("Not a less paul guitaree  John            NULL            050 699.99");
-        testItemBuffer.add("UOIT Water Bottle         John            NULL            020 599.99");
-        testItemBuffer.add("UOIT Backpack             john            Bob             100 700.00");
-        testItemBuffer.add("UOIT Backpack             john            Bob             100 700.00");
-        testItemBuffer.add("END");
-
-        // testTransBuffer.add("04 macbook pro 16 i7 silver  john            Bob             700.00");
-        // testTransBuffer.add("03 UOIT Backpack             john            Bob             100 700.00");
-        
-        try {
-            PrintWriter pw = new PrintWriter( new File("info.txt") );
-            pw.write(testUserBuffer.toString());
-            pw.close();
-        } catch (IOException ioe ) { ioe.printStackTrace(); }
-
-        assertTrue("The item files are different", FileUtils.contentEquals("current-user-accounts.txt", oWriter.bufferNewUsers(testUserBuffer, testTransBuffer)));
-    }
+        testTransBuffer.add("01_testUser________FS_000000500");
     
+        assertEquals(testUserBuffer, oWriter.writeNewUsers(testTransBuffer, testUserBuffer, "current-user-accounts.txt"));
+    }
+    // For testing purposes, make sure avaliable-items-test.txt is open so you can undo after you run the testing code
+    @Test
+    public void writeNewItemTest() {
+        OutputWriter iWriter = new OutputWriter();
+        Vector<String> testTransBuffer = new Vector<String>();
+        Vector<String> testItemBuffer = new Vector<String>();
+        Vector<String> testUserBuffer = new Vector<String>();
+
+        testItemBuffer.add("macbook pro 16 i7 silver  John            Bob             899 700.00");
+        testItemBuffer.add("Not a less paul guitaree  John            NULL            049 699.99");
+        testItemBuffer.add("UOIT Water Bottle         John            NULL            019 599.99");
+        testItemBuffer.add("UOIT Backpack             john            Bob             099 700.00");
+        testItemBuffer.add("UOIT Backpack             john            Bob             099 700.00");
+        testItemBuffer.add("END");
+        
+        testUserBuffer.add("Bob             AA 0000600.00 password");
+        testUserBuffer.add("Test            FS 0020005.10 passward");
+        testUserBuffer.add("John            FS 0000000.00 passward");
+        testUserBuffer.add("Mart            BS 0000000.00 password");
+        testUserBuffer.add("bobby           BS 0000500.00 password");
+        testUserBuffer.add("testerUser      BS 0010000.00 password");
+        testUserBuffer.add("testUser        FS 0000005.00 password");
+
+        testTransBuffer.add("01_testUser________FS_000000500");
+    
+        assertEquals(testItemBuffer, iWriter.writeNewItems(testTransBuffer, testItemBuffer, testUserBuffer, "available-items-test.txt"));
+    }
     // @Test
     // public void WritingNewItemsTest() {
     //     OldItemFileReader i = new OldItemFileReader();

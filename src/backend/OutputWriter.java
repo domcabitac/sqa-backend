@@ -391,9 +391,9 @@ public class OutputWriter {
 
             // creates a new file writer and writes to it
             FileWriter oFileWriter = new FileWriter(itemsFileName);
-            for (int i = 0; i < newItemBuffer.size(); i++) {
-                oFileWriter.write(newItemBuffer.get(i) + "\n");
-                if (i == newItemBuffer.size()) {
+            for (int j = 0; j < newItemBuffer.size(); j++) {
+                oFileWriter.write(newItemBuffer.get(j) + "\n");
+                if (j == newItemBuffer.size()) {
                     oFileWriter.write("END");
                 }
             }
@@ -402,7 +402,7 @@ public class OutputWriter {
             System.out.println("Writing new items...");
             oFileWriter.close();
         // exceptions for file not existing, or if there was a problem with writing the file
-        } catch (FileNotFoundException e) {
+        }} catch (FileNotFoundException e) {
             System.out.println("File not found" + e);
         } catch (IOException ioe) {
             System.out.println("Exception while writing file " + ioe);
