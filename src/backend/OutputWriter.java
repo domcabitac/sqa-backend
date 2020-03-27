@@ -110,7 +110,7 @@ public class OutputWriter {
                     System.out.println("ERROR: Not enough credits! Type: Bid");
                 }
             }
-        // check if current transaction is refund
+        // check if current transaction is REFUND
         } else if (currentTransaction.substring(0,2).contains("05")) {
             int buyerIndex = -1; 
             int sellerIndex = -1;
@@ -265,7 +265,7 @@ public class OutputWriter {
     }
     
     // OutputWriter class function that will write the changed user buffer to the file
-    public void writeNewUsers(Vector<String> transactionsBuffer, Vector<String> newUserBuffer, String usersFileName) {
+    public Vector<String> writeNewUsers(Vector<String> transactionsBuffer, Vector<String> newUserBuffer, String usersFileName) {
         try {
             // creates a new file writer and writes to it
             FileWriter oFileWriter = new FileWriter(usersFileName);
@@ -285,10 +285,11 @@ public class OutputWriter {
         } catch (IOException ioe) {
             System.out.println("Exception while writing file " + ioe);
         }
+        return newUserBuffer;
     }
 
     // Output function writeNewItems that will write the final changed item buffer to itemsFileName path
-    public void writeNewItems(Vector<String> transactionsBuffer, Vector<String> newItemBuffer, Vector<String> newUserBuffer, String itemsFileName) {
+    public Vector<String> writeNewItems(Vector<String> transactionsBuffer, Vector<String> newItemBuffer, Vector<String> newUserBuffer, String itemsFileName) {
         try {
             // decrement all auction days by 1 and handle any transactions
             for (int i = 0; i < newItemBuffer.size() - 1; i++) {
@@ -406,6 +407,7 @@ public class OutputWriter {
         } catch (IOException ioe) {
             System.out.println("Exception while writing file " + ioe);
         }
+        return newItemBuffer;
     }
 
     /* OutputWriter class method to determine which file to update. It will use currentTransaction, newUserBuffer, newItemBuffer, transactionsBuffer 
@@ -454,8 +456,8 @@ public class OutputWriter {
                 oWriter.determineTransactionType(newUserBuffer, newItemBuffer, transactionsBuffer);
 
                 // writes the new items
-                oWriter.writeNewItems(transactionsBuffer, newItemBuffer, newUserBuffer, argv[2]);
-                oWriter.writeNewUsers(transactionsBuffer, newUserBuffer, argv[1]);
+                System.out.println(oWriter.writeNewItems(transactionsBuffer, newItemBuffer, newUserBuffer, argv[2]));
+                System.out.println(oWriter.writeNewUsers(transactionsBuffer, newUserBuffer, argv[1]));
             }
             // exception with too few arguments
         } catch (Exception ex) {
