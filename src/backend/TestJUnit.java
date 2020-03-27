@@ -3,6 +3,7 @@ import java.io.*;
 import java.util.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+import org.apache.commons.io.FileUtils;
 
 public class TestJunit {
     public Vector<String> oldItemBuffer = new Vector<String>();
@@ -72,7 +73,7 @@ public class TestJunit {
 
     // Testing, not working yet
     @Test
-    public void determineTransactionTypeTest() {
+    public void writeNewItemsTest() {
         OutputWriter oWriter = new OutputWriter();
         Vector<String> testTransBuffer = new Vector<String>();
         Vector<String> testItemBuffer = new Vector<String>();
@@ -94,8 +95,14 @@ public class TestJunit {
 
         testTransBuffer.add("04 macbook pro 16 i7 silver  john            Bob             700.00");
         testTransBuffer.add("03 UOIT Backpack             john            Bob             100 700.00");
-    
-        assertSame("",oWriter.determineTransactionType(testUserBuffer, testItemBuffer, testTransBuffer));
+        
+        try {
+            PrintWriter pw = new PrintWriter( new File("info.txt") );
+            pw.write(testItemBuffer.toString());
+            pw.close();
+        } catch (IOException ioe ) { ioe.printStackTrace(); }
+
+        assertTrue("The item files are different", FileUtils.contentEquals("available-items-test.txt", oWriter.writeNewItems(testTransBuffer, testItemBuffer, "info.txt")));
     }
     
     // @Test
