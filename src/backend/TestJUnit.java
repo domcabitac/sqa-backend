@@ -12,7 +12,8 @@ public class TestJunit {
     public Vector<String> newUserBuffer = new Vector<String>();
     public Vector<String> newItemBuffer = new Vector<String>();
     public String transactionType;
-
+    
+    // Test to see if reader is reading and outputing the same data from .txt file
     @Test
     public void ReadingUserFileTest() {
         OldUserFileReader u = new OldUserFileReader();
@@ -30,6 +31,17 @@ public class TestJunit {
         assertEquals(testUser, u.readUserFile("current-user-accounts.txt"));
     }
 
+    // Testing for reading invalid file
+    // Should be blank
+    @Test
+    public void ReadingUserFileTest2() {
+        OldUserFileReader u = new OldUserFileReader();
+        Vector<String> testUser = new Vector<String>();
+        
+        assertEquals(testUser, u.readUserFile("fakeUserslist.txt"));
+    }
+
+    // Test to see if reader is reading and outputing the same data from .txt file
     @Test
     public void ReadingItemFileTest() {
         OldItemFileReader i = new OldItemFileReader();
@@ -45,6 +57,38 @@ public class TestJunit {
         assertEquals(testItem, i.readItemFile("available-items-test.txt"));
     }
 
+    // Testing for reading invalid file
+    // Should be blank
+    @Test
+    public void ReadingItemFileTest2() {
+        OldItemFileReader i = new OldItemFileReader();
+        Vector<String> testItem = new Vector<String>();
+
+        assertEquals(testItem, i.readItemFile("fakeItemsList.txt"));
+    }
+    
+    // Test to see if reader is reading and outputing the same data from .txt file
+    @Test
+    public void ReadingTransactionFileTest() {
+        TransactionReader i = new TransactionReader();
+        Vector<String> testTrans = new Vector<String>();
+
+        testTrans.add("01_testUser________FS_000000500");
+
+        assertEquals(testTrans, i.readMergedTransaction("daily-transactions.txt"));
+    }
+
+    // Testing for reading invalid file
+    // Should be blank
+    @Test
+    public void ReadingTransactionFileTest2() {
+        TransactionReader i = new TransactionReader();
+        Vector<String> testTrans = new Vector<String>();
+
+        assertEquals(testTrans, i.readMergedTransaction("daily-transactions.txt"));
+    }
+    
+    // Test to see if writer is outputing right values
     @Test
     public void writeNewUserTest() {
         OutputWriter oWriter = new OutputWriter();
@@ -63,6 +107,7 @@ public class TestJunit {
     
         assertEquals(testUserBuffer, oWriter.writeNewUsers(testTransBuffer, testUserBuffer, "current-user-accounts.txt"));
     }
+
     // For testing purposes, make sure avaliable-items-test.txt is open so you can undo after you run the testing code
     @Test
     public void writeNewItemTest() {
@@ -90,25 +135,25 @@ public class TestJunit {
     
         assertEquals(testItemBuffer, iWriter.writeNewItems(testTransBuffer, testItemBuffer, testUserBuffer, "available-items-test.txt"));
     }
-    // @Test
-    // public void WritingNewItemsTest() {
-    //     OldItemFileReader i = new OldItemFileReader();
-    //     OutputWriter w = new OutputWriter();
-
-    //     Vector<String> oldItemBuffer = i.readItemFile("available-items-test.txt");
-
-
-    //     assertEquals("Writing new items...", w.writeNewItems(oldItemBuffer, "available-items-test.txt"));
-    // }
 
     // @Test
-    // public void WritingNewUsersTest() {
-    //     OldUserFileReader u = new OldUserFileReader();
-    //     OutputWriter w = new OutputWriter();
+    // public void writeNewUserExistTest() {
+    //     OutputWriter oWriter = new OutputWriter();
+    //     String testTransBuffer = "01_testUser________FS_000000500";
+    //     Vector<String> testUserBuffer = new Vector<String>();
+    //     Vector<String> testNewUserBuffer = new Vector<String>();
 
-    //     Vector<String> oldItemBuffer = u.readUserFile("current-user-accounts.txt");
 
-
-    //     assertEquals("Writing new users...", w.writeNewUsers(oldUserBuffer, "current-user-accounts.txt"));
+    //     testUserBuffer.add("Bob             AA 0000600.00 password");
+    //     testUserBuffer.add("Test            FS 0020005.10 passward");
+    //     testUserBuffer.add("John            FS 0000000.00 passward");
+    //     testUserBuffer.add("Mart            BS 0000000.00 password");
+    //     testUserBuffer.add("bobby           BS 0000500.00 password");
+    //     testUserBuffer.add("testerUser      BS 0010000.00 password");
+    //     testUserBuffer.add("testUser        FS 0000005.00 password");
+        
+    //     testNewUserBuffer.add("testUser        FS 0000005.00 password");
+    
+    //     assertEquals(testUserBuffer, oWriter.bufferNewUsers(testNewUserBuffer, testTransBuffer));
     // }
 }

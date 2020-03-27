@@ -32,7 +32,7 @@ public class OldUserFileReader {
 
         // catch if usersFileName is not found
         } catch (IOException e) {
-            System.out.println("File not found" + e);
+            System.out.println("File not found " + e);
         }
         // Test Code
         // System.out.println(oldUserBuffer);

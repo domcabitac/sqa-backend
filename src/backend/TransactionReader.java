@@ -32,7 +32,7 @@ public class TransactionReader {
 
         // catch if transactionFileName is not found
         } catch (IOException e) {
-            System.out.println("File not found" + e);
+            System.out.println("File not found " + e);
         }
         // Test Code
         // System.out.println(transactionBuffer);

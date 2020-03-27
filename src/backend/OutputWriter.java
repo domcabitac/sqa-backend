@@ -412,8 +412,7 @@ public class OutputWriter {
 
     /* OutputWriter class method to determine which file to update. It will use currentTransaction, newUserBuffer, newItemBuffer, transactionsBuffer 
         and OutputFilepath to update the corresponding txt file */
-    public void determineTransactionType(Vector<String> newUserBuffer, Vector<String> newItemBuffer, Vector<String> 
-        transactionsBuffer) {
+    public Vector<String> determineTransactionType(Vector<String> newUserBuffer, Vector<String> newItemBuffer, Vector<String> transactionsBuffer) {
         for (int i = 0; i < transactionsBuffer.size(); i++) {
             System.out.println("Transaction: " + transactionsBuffer.get(i));
             // TODO: takes in the current transaction from the buffer, and determines if its user or items file affected
@@ -427,6 +426,10 @@ public class OutputWriter {
                 bufferNewItems(newItemBuffer, transactionsBuffer.get(i));
             }
         }
+        System.out.println("COPY THIS");
+        System.out.println(transactionsBuffer);
+        System.out.println("----------------------------------------");
+        return transactionsBuffer;
     } 
     
     // main function to execute the auction service backend, writeUsers works
