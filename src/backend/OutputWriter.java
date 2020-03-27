@@ -85,8 +85,8 @@ public class OutputWriter {
             
             // loop to assign the index of the matching user
             for (int j = 0; j < newUserBuffer.size(); j++) {
-                System.out.println(buyer.replace(" ", "_"));
-                System.out.println(newUserBuffer.get(j).substring(0,15).replace(" ", "_"));
+                //System.out.println(buyer.replace(" ", "_"));
+                //System.out.println(newUserBuffer.get(j).substring(0,15).replace(" ", "_"));
                 if ((newUserBuffer.get(j).substring(0, 15)).equals(buyer)) {
                     index = j;
                     System.out.println("s index: " + j);
@@ -119,8 +119,8 @@ public class OutputWriter {
             String seller = currentTransaction.substring(19, 34);
             String amount = currentTransaction.substring(35, 43);
             
-            System.out.println(seller.replace(" ", "_"));
-            System.out.println(buyer.replace(" ", "_"));
+            //System.out.println(seller.replace(" ", "_"));
+            //System.out.println(buyer.replace(" ", "_"));
 
             // loop to assign the sellerindex of the matching user
             for (int j = 0; j < newUserBuffer.size()-1; j++) {
@@ -247,7 +247,7 @@ public class OutputWriter {
                 if (newItemBuffer.get(i).trim().equals("END")) {
                     System.out.println("end of file");
                     System.out.println("Removing " + (newItemBuffer.size() - 1));
-                    newItemBuffer.remove(newItemBuffer.size());
+                    newItemBuffer.remove(newItemBuffer.size()-1);
                     break;
                 }
                 // check to see if current item in new item buffer is equal to the item in current transaction
