@@ -1,0 +1,3 @@
+Bob             AA 000506.000 password
+testUser        FS 0000005.00 password
+END
