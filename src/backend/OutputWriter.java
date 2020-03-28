@@ -25,10 +25,6 @@ public class OutputWriter {
         currentTransaction = currentTransaction.replace("_", " ");
         String currentUser = currentTransaction.substring(3, 19);
 
-        // remove the END from the file 
-        if (newUserBuffer.lastElement().trim().equals("END")) {
-            newUserBuffer.remove(newUserBuffer.lastElement());
-        }
         // check if current transaction is CREATE
         if (currentTransaction.substring(0,2).contains("01")) {
             int index = -1;
@@ -234,22 +230,17 @@ public class OutputWriter {
     
     // OutputWriter class method to update items txt file, which will use newItemBuffer and manipulate it with transactionBuffer
     public void bufferNewItems(Vector<String> newItemBuffer, String currentTransaction) {
+        
         // replace any underscores with spaces
         currentTransaction = currentTransaction.replace("_", " ");
         // check if current transaction is advertise
         if (currentTransaction.substring(0,2).contains("03")) {
-            String newEntry = currentTransaction.substring(3,currentTransaction.length());
+            String newEntry = currentTransaction.substring(3, 45) + "NULL            " + currentTransaction.substring(45, currentTransaction.length());
+            System.out.println(newEntry);
             newItemBuffer.add(newEntry);
         // check if current transaction is BID
         } else if (currentTransaction.substring(0,2).contains("04")) {
-            for (int i = 0; i < newItemBuffer.size()-1; i++) {
-                // if the current index of newItemBuffer is 'END', remove it
-                if (newItemBuffer.get(i).trim().equals("END")) {
-                    System.out.println("end of file");
-                    System.out.println("Removing " + (newItemBuffer.size() - 1));
-                    newItemBuffer.remove(newItemBuffer.size()-1);
-                    break;
-                }
+            for (int i = 0; i < newItemBuffer.size(); i++) {
                 // check to see if current item in new item buffer is equal to the item in current transaction
                 if (newItemBuffer.get(i).substring(0,25).contains(currentTransaction.substring(3,28))) {
                     // Creating new item here with applied transaction
@@ -278,6 +269,9 @@ public class OutputWriter {
             FileWriter oFileWriter = new FileWriter(usersFileName);
             for (int i = 0; i < newUserBuffer.size(); i++) {
                 oFileWriter.write(newUserBuffer.get(i) + "\n");
+                if (newUserBuffer.get(i).trim().equals("END")) {
+                    newUserBuffer.remove(i);
+                }
                 if (i == newUserBuffer.size()-1) {
                     // add END to mark the end of the file, 
                     oFileWriter.write("END");
@@ -401,7 +395,10 @@ public class OutputWriter {
             FileWriter oFileWriter = new FileWriter(itemsFileName);
             for (int j = 0; j < newItemBuffer.size(); j++) {
                 oFileWriter.write(newItemBuffer.get(j) + "\n");
-                if (j == newItemBuffer.size()) {
+                if (newItemBuffer.get(j).trim().equals("END")) {
+                    newItemBuffer.remove(j);
+                }
+                if (j == newItemBuffer.size()-1) {
                     oFileWriter.write("END");
                 }
             }

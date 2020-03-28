@@ -1,17 +1,6 @@
-<<<<<<< HEAD
-Bob             AA 0000506.00 password
+Bob             AA 0000500.00 password
 Test            FS 0020005.10 passward
-John            FS 0000494.00 passward
+John            FS 0000500.00 passward
 Mart            BS 0000000.00 password
 bobby           SS 0000470.00 password
-testerUser      BS 0002500.00 password
-=======
-Bob             AA 000504.000 password
-Test            FS 0020005.10 passward
-John            FS 000496.000 passward
-Mart            BS 0000000.00 password
-bobby           SS 0000470.00 password
-testerUser      BS 0001000.00 password
-testUser        FS 0000005.00 password
->>>>>>> 8332563cdc9b8d3bd8b680a5a98d9df16b34fd96
 END
