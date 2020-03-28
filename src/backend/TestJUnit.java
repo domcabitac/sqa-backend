@@ -19,13 +19,12 @@ public class TestJunit {
         OldUserFileReader u = new OldUserFileReader();
         Vector<String> testUser = new Vector<String>();
         
-        testUser.add("Bob             AA 0000600.00 password");
+        testUser.add("Bob             AA 000502.000 password");
         testUser.add("Test            FS 0020005.10 passward");
-        testUser.add("John            FS 0000000.00 passward");
+        testUser.add("John            FS 000498.000 passward");
         testUser.add("Mart            BS 0000000.00 password");
-        testUser.add("bobby           BS 0000500.00 password");
-        testUser.add("testerUser      BS 0010000.00 password");
-        testUser.add("testUser        FS 0000005.00 password");
+        testUser.add("bobby           SS 0000470.00 password");
+        testUser.add("testerUser      BS 0000500.00 password");
         testUser.add("END");
 
         assertEquals(testUser, u.readUserFile("current-user-accounts.txt"));
@@ -149,7 +148,7 @@ public class TestJunit {
     
         assertEquals(testItemBuffer, iWriter.writeNewItems(testTransBuffer, testItemBuffer, testUserBuffer, "available-items-test.txt"));
     }
-
+    // // Not done yet, currently working on it
     // @Test
     // public void writeNewUserExistTest() {
     //     OutputWriter oWriter = new OutputWriter();

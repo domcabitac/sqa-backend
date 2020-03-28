@@ -436,9 +436,6 @@ public class OutputWriter {
                 bufferNewItems(newItemBuffer, transactionsBuffer.get(i));
             }
         }
-        System.out.println("COPY THIS");
-        System.out.println(transactionsBuffer);
-        System.out.println("----------------------------------------");
         return transactionsBuffer;
     } 
     
