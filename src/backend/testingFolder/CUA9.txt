@@ -1,0 +1,8 @@
+Bob             AA 0000508.00 password
+Test            FS 0020005.10 passward
+John            FS 9999999.99 passward
+Mart            BS 0000000.00 password
+bobby           SS 0000470.00 password
+testerUser      BS 0001000.00 password
+testUser        FS 0000005.00 password
+END
