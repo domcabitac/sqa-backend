@@ -77,7 +77,7 @@ public class OutputWriter {
                 System.out.println("ERROR: User does not exist! Transaction rejected! Type: Delete");
             }  
         // check if current transaction is BID
-        } else if (currentTransaction.substring(0,2).contains("04")) {
+        /*} else if (currentTransaction.substring(0,2).contains("04")) {
             String buyer = currentTransaction.substring(45, 60);
             String bid = currentTransaction.substring(61, 67);
 
@@ -109,7 +109,7 @@ public class OutputWriter {
                 } else if (newCredit < 0) {
                     System.out.println("ERROR: Not enough credits! Type: Bid");
                 } 
-            }
+            }*/
         // check if current transaction is REFUND
         } else if (currentTransaction.substring(0,2).contains("05")) {
             int buyerIndex = -1; 
@@ -240,7 +240,7 @@ public class OutputWriter {
         if (currentTransaction.substring(0,2).contains("03")) {
             String newEntry = currentTransaction.substring(3,currentTransaction.length());
             newItemBuffer.add(newEntry);
-        // check if current transaction is bid
+        // check if current transaction is BID
         } else if (currentTransaction.substring(0,2).contains("04")) {
             for (int i = 0; i < newItemBuffer.size()-1; i++) {
                 // if the current index of newItemBuffer is 'END', remove it
@@ -428,8 +428,7 @@ public class OutputWriter {
             // takes in the current transaction from the transaction buffer, and determines if its user or items file affected
             // transactions that affect users are Create, Delete, Refund, Bid and Add Credit
             if (transactionsBuffer.get(i).substring(0,2).contains("01") || transactionsBuffer.get(i).substring(0,2).contains("02") || 
-                transactionsBuffer.get(i).substring(0,2).contains("04") || transactionsBuffer.get(i).substring(0,2).contains("05") || 
-                transactionsBuffer.get(i).substring(0,2).contains("06")) {
+                transactionsBuffer.get(i).substring(0,2).contains("05") || transactionsBuffer.get(i).substring(0,2).contains("06")) {
                 System.out.println("Writing to users...");
                 bufferNewUsers(newUserBuffer, transactionsBuffer.get(i));
             // transactions that affect items are bid and advertise
