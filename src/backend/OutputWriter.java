@@ -153,11 +153,11 @@ public class OutputWriter {
                     System.out.println("ERROR: Seller does not have enough credits! Transaction rejected and item deleted! Type: Refund");
                 // check if buyer is not at max credits
                 } else if (buyerCredit + Double.parseDouble(amount) > 999999) {
-                    System.out.println("ERROR: Seller has exceed maximum credits! Transaction rejected and item deleted! Type: Refund");
+                    System.out.println("ERROR: Buyer has exceeded maximum credits! Transaction rejected and item deleted! Type: Refund");
                 // otherwise, run the transaction and process it 
                 } else {
-                    double newSellerCredit = sellerCredit + Double.parseDouble(amount);
-                    double newBuyerCredit = buyerCredit - Double.parseDouble(amount);
+                    double newSellerCredit = sellerCredit - Double.parseDouble(amount);
+                    double newBuyerCredit = buyerCredit + Double.parseDouble(amount);
 
                     //System.out.println("New Buyer Credit: " + newBuyerCredit);
                     //System.out.println("New Seller Credit: " + newSellerCredit);
