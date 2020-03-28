@@ -476,41 +476,127 @@ public class TestJunit {
                 // assertEquals(testUserExpectedBuffer, oWriter.writeNewUsers(testTransBuffer, newUserBuffer, "testingFolder/CUA11.txt"));
     
             // }
-        // Currently working on it
-        @Test
-        public void bufferNewItemsTest(){
-            OutputWriter oWriter = new OutputWriter();
-            OldItemFileReader iReader = new OldItemFileReader();
-            Vector<String> testUserBuffer = new Vector<String>();
-            Vector<String> testItemExpectedBuffer = new Vector<String>();
-            Vector<String> testNewUserBuffer = new Vector<String>();
-            Vector<String> testItemBuffer = new Vector<String>();
-            Vector<String> testTransBuffer = new Vector<String>();
+
+        // Buffering new item successful
+        // @Test
+        // public void bufferNewItemsTest(){
+        //     OutputWriter oWriter = new OutputWriter();
+        //     OldItemFileReader iReader = new OldItemFileReader();
+        //     Vector<String> testUserBuffer = new Vector<String>();
+        //     Vector<String> testItemExpectedBuffer = new Vector<String>();
+        //     Vector<String> testNewUserBuffer = new Vector<String>();
+        //     Vector<String> testItemBuffer = new Vector<String>();
+        //     Vector<String> testTransBuffer = new Vector<String>();
         
-            testTransBuffer.add("03_amazing_guitar____________admin___________050_050.00");
+        //     testTransBuffer.add("03_amazing_guitar____________admin___________050_050.00");
     
-            testUserBuffer.add("Bob             AA 0000508.00 password");
-            testUserBuffer.add("Test            FS 0020005.10 passward");
-            testUserBuffer.add("John            FS 9999999.99 passward");
-            testUserBuffer.add("Mart            BS 0000000.00 password");
-            testUserBuffer.add("bobby           SS 0000470.00 password");
-            testUserBuffer.add("testerUser      BS 0001000.00 password");
-            testUserBuffer.add("testUser        FS 0000005.00 password");
+        //     testUserBuffer.add("Bob             AA 0000508.00 password");
+        //     testUserBuffer.add("Test            FS 0020005.10 passward");
+        //     testUserBuffer.add("John            FS 9999999.99 passward");
+        //     testUserBuffer.add("Mart            BS 0000000.00 password");
+        //     testUserBuffer.add("bobby           SS 0000470.00 password");
+        //     testUserBuffer.add("testerUser      BS 0001000.00 password");
+        //     testUserBuffer.add("testUser        FS 0000005.00 password");
 
-            testItemExpectedBuffer.add("macbook pro 16 i7 silver  John            Bob             899 700.00");
-            testItemExpectedBuffer.add("Not a less paul guitaree  John            NULL            049 699.99");
-            testItemExpectedBuffer.add("UOIT Water Bottle         John            NULL            019 599.99");
-            testItemExpectedBuffer.add("UOIT Backpack             john            Bob             099 700.00");
-            testItemExpectedBuffer.add("UOIT Backpack             john            Bob             099 700.00");
-            testItemExpectedBuffer.add("amazing guitar            John            Bob             050 050.00");
-            testItemExpectedBuffer.add("END");
+        //     testItemExpectedBuffer.add("macbook pro 16 i7 silver  John            Bob             889 700.00");
+        //     testItemExpectedBuffer.add("Not a less paul guitaree  John            NULL            039 699.99");
+        //     testItemExpectedBuffer.add("UOIT Water Bottle         John            NULL            009 599.99");
+        //     testItemExpectedBuffer.add("UOIT Backpack             john            Bob             089 700.00");
+        //     testItemExpectedBuffer.add("UOIT Backpack             john            Bob             089 700.00");
+        //     testItemExpectedBuffer.add("amazing guitar            John            Bob             050 050.00");
+        //     testItemExpectedBuffer.add("END");
 
-            Vector<String> oldItemBuffer = iReader.readItemFile("testingFolder/AI3.txt");
-            Vector<String> newItemBuffer = new Vector<String>(oldItemBuffer);
+        //     Vector<String> oldItemBuffer = iReader.readItemFile("testingFolder/AI3.txt");
+        //     Vector<String> newItemBuffer = new Vector<String>(oldItemBuffer);
                     
-            oWriter.determineTransactionType(testUserBuffer, newItemBuffer, testTransBuffer);
+        //     oWriter.determineTransactionType(testUserBuffer, newItemBuffer, testTransBuffer);
     
-            assertEquals(testItemExpectedBuffer, oWriter.writeNewItems(testTransBuffer, newItemBuffer, testUserBuffer, "testingFolder/AI3.txt"));
+        //     assertEquals(testItemExpectedBuffer, oWriter.writeNewItems(testTransBuffer, newItemBuffer, testUserBuffer, "testingFolder/AI3.txt"));
+        // }
 
+        // // Loop coverage 
+        // // Test 1 No users, items, transactions
+        // @Test
+        // public void determineTransTypeLoopCoverage1() {
+        //     OutputWriter oWriter = new OutputWriter();
+        //     TransactionReader tReader = new TransactionReader();
+        //     OldUserFileReader uReader = new OldUserFileReader();
+        //     OldItemFileReader iReader = new OldItemFileReader();
+        //     Vector<String> testExpected = new Vector<String>();
+
+        //     Vector<String> transactionsBuffer = tReader.readMergedTransaction("testingFolder/DTLoop1.txt");
+        //     Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUALoop1.txt");
+        //     Vector<String> oldItemBuffer = iReader.readItemFile("testingFolder/AILoop1.txt");
+
+        //     Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
+        //     Vector<String> newItemBuffer = new Vector<String>(oldItemBuffer);
+
+        //     oWriter.determineTransactionType(newUserBuffer, newItemBuffer, transactionsBuffer);
+        
+        //     assertEquals(testExpected, oWriter.writeNewItems(transactionsBuffer, newItemBuffer, newUserBuffer, "testingFolder/AILoop1.txt"));
+        //     assertEquals(testExpected, oWriter.writeNewUsers(transactionsBuffer, newUserBuffer, "testingFolder/CUALoop1.txt"));
+
+        // }
+
+        // // Test 2 single user, single item, single transactions
+        // @Test
+        // public void determineTransTypeLoopCoverage2() {
+        //     OutputWriter oWriter = new OutputWriter();
+        //     TransactionReader tReader = new TransactionReader();
+        //     OldUserFileReader uReader = new OldUserFileReader();
+        //     OldItemFileReader iReader = new OldItemFileReader();
+        //     Vector<String> testExpectedUsers = new Vector<String>();
+        //     Vector<String> testExpectedItems = new Vector<String>();
+
+        //     testExpectedUsers.add("Bob             AA 000506.000 password");
+        //     testExpectedItems.add("macbook pro 16 i7 silver  John            Bob             898 700.00");
+
+        //     Vector<String> transactionsBuffer = tReader.readMergedTransaction("testingFolder/DTLoop2.txt");
+        //     Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUALoop2.txt");
+        //     Vector<String> oldItemBuffer = iReader.readItemFile("testingFolder/AILoop2.txt");
+
+        //     Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
+        //     Vector<String> newItemBuffer = new Vector<String>(oldItemBuffer);
+
+        //     oWriter.determineTransactionType(newUserBuffer, newItemBuffer, transactionsBuffer);
+        
+        //     assertEquals(testExpectedItems, oWriter.writeNewItems(transactionsBuffer, newItemBuffer, newUserBuffer, "testingFolder/AILoop2.txt"));
+        //     assertEquals(testExpectedUsers, oWriter.writeNewUsers(transactionsBuffer, newUserBuffer, "testingFolder/CUALoop2.txt"));
+        // }
+
+        // // Test 3, multiple users, items and transactions
+        @Test
+        public void determineTransTypeLoopCoverage3() {
+            OutputWriter oWriter = new OutputWriter();
+            TransactionReader tReader = new TransactionReader();
+            OldUserFileReader uReader = new OldUserFileReader();
+            OldItemFileReader iReader = new OldItemFileReader();
+            Vector<String> testExpectedUsers = new Vector<String>();
+            Vector<String> testExpectedItems = new Vector<String>();
+            testExpectedUsers.add("Bob             AA 000504.000 password");
+            testExpectedUsers.add("Test            FS 0020005.10 passward");
+            testExpectedUsers.add("John            FS 000496.000 passward");
+            testExpectedUsers.add("Mart            BS 0000000.00 password");
+            testExpectedUsers.add("bobby           SS 0000470.00 password");
+            testExpectedUsers.add("testerUser      BS 0001000.00 password");
+            testExpectedUsers.add("testUser        FS 0000005.00 password");
+            testExpectedItems.add("macbook pro 16 i7 silver  John            Bob             898 700.00");
+            testExpectedItems.add("Not a less paul guitaree  John            NULL            048 699.99");
+            testExpectedItems.add("UOIT Water Bottle         John            NULL            018 599.99");
+            testExpectedItems.add("UOIT Backpack             john            Bob             098 700.00");
+            testExpectedItems.add("UOIT Backpack             john            Bob             098 700.00");
+            testExpectedItems.add("END");
+
+            Vector<String> transactionsBuffer = tReader.readMergedTransaction("testingFolder/DTLoop3.txt");
+            Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUALoop3.txt");
+            Vector<String> oldItemBuffer = iReader.readItemFile("testingFolder/AILoop3.txt");
+
+            Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
+            Vector<String> newItemBuffer = new Vector<String>(oldItemBuffer);
+
+            oWriter.determineTransactionType(newUserBuffer, newItemBuffer, transactionsBuffer);
+        
+            assertEquals(testExpectedItems, oWriter.writeNewItems(transactionsBuffer, newItemBuffer, newUserBuffer, "testingFolder/AILoop3.txt"));
+            assertEquals(testExpectedUsers, oWriter.writeNewUsers(transactionsBuffer, newUserBuffer, "testingFolder/CUALoop3.txt"));
         }
 }
