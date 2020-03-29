@@ -193,7 +193,7 @@ public class TestJunit {
             testUserExpectedBuffer.add("Mart            BS 0000000.00 password");
             testUserExpectedBuffer.add("bobby           SS 0000470.00 password");
             testUserExpectedBuffer.add("testerUser      BS 0001000.00 password");
-            testUserExpectedBuffer.add("testUser        FS 0000005.00 password")
+            testUserExpectedBuffer.add("testUser        FS 0000005.00 password");
 
             Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUA4.txt");
             Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
