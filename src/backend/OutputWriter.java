@@ -305,25 +305,26 @@ public class OutputWriter {
                     // create the new item and overwrite the buffer with it
                     String newItem = newItemBuffer.get(i).substring(0, 58) + extraZero + newAuctionDays + newItemBuffer.get(i).substring(61, 68);
                     newItemBuffer.set(i, newItem);
+                //}
                 }
-            }
 
-            // creates a new file writer and writes to it
-            FileWriter oFileWriter = new FileWriter(itemsFileName);
-            for (int j = 0; j < newItemBuffer.size(); j++) {
-                oFileWriter.write(newItemBuffer.get(j) + "\n");
-                if (newItemBuffer.get(j).trim().equals("END")) {
-                    newItemBuffer.remove(j);
+                // creates a new file writer and writes to it
+                FileWriter oFileWriter = new FileWriter(itemsFileName);
+                for (int j = 0; j < newItemBuffer.size(); j++) {
+                    oFileWriter.write(newItemBuffer.get(j) + "\n");
+                    if (newItemBuffer.get(j).trim().equals("END")) {
+                        newItemBuffer.remove(j);
+                    }
+                    if (j == newItemBuffer.size()-1) {
+                        oFileWriter.write("END");
+                    }
                 }
-                if (j == newItemBuffer.size()-1) {
-                    oFileWriter.write("END");
-                }
-            }
 
-            System.out.println("Writing new items...");
-            oFileWriter.close();
+                System.out.println("Writing new items...");
+                oFileWriter.close();
+            }
         // exceptions for file not existing, or if there was a problem with writing the file
-        }} catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             System.out.println("File not found" + e);
         } catch (IOException ioe) {
             System.out.println("Exception while writing file " + ioe);
@@ -347,7 +348,7 @@ public class OutputWriter {
             } if (transactionsBuffer.get(i).substring(0,2).contains("03") || transactionsBuffer.get(i).substring(0,2).contains("04")) {
                 System.out.println("Writing to items...");
                 bufferNewItems(newItemBuffer, transactionsBuffer.get(i));
-            } else {
+            } else if (!transactionsBuffer.get(i).substring(0, 2).contains("00")) {
                 System.out.println("ERROR: Invalid transaction! Type: Transaction");
             }
         }
