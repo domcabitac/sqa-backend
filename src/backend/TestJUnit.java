@@ -23,8 +23,7 @@ public class TestJunit {
         assertEquals(testUser, u.readUserFile("testingFolder/CUA1.txt"));
     }
 
-    // Testing for reading invalid file
-    // Should be blank
+    // // Testing for reading invalid file, Should be blank
     @Test
     public void ReadingUserFileTest2() {
         OldUserFileReader u = new OldUserFileReader();
@@ -49,8 +48,7 @@ public class TestJunit {
         assertEquals(testItem, i.readItemFile("testingFolder/AI1.txt"));
     }
 
-    // Testing for reading invalid file
-    // Should be blank
+    // // Testing for reading invalid file. should be blank
     @Test
     public void ReadingItemFileTest2() {
         OldItemFileReader i = new OldItemFileReader();
@@ -59,7 +57,7 @@ public class TestJunit {
         assertEquals(testItem, i.readItemFile("fakeItemsList.txt"));
     }
     
-    // Test to see if reader is reading and outputing the same data from .txt file
+    // // Test to see if reader is reading and outputing the same data from .txt file
     @Test
     public void ReadingTransactionFileTest() {
         TransactionReader i = new TransactionReader();
@@ -77,8 +75,7 @@ public class TestJunit {
         assertEquals(testTrans, i.readMergedTransaction("testingFolder/DT1.txt"));
     }
 
-    // Testing for reading invalid file
-    // Should be blank
+    // // Testing for reading invalid file, Should be blank
     @Test
     public void ReadingTransactionFileTest2() {
         TransactionReader i = new TransactionReader();
@@ -87,8 +84,8 @@ public class TestJunit {
         assertEquals(testTrans2, i.readMergedTransaction("fakeDailyTrans.txt"));
     }
     
-    // Test to see if writer is outputing right values
-    // For testing purposes, delete testUser from .txt file
+    // // Test to see if writer is outputing right values
+    // // For testing purposes, delete testUser from .txt file
     @Test
     public void writeNewUserTest() {
         OutputWriter oWriter = new OutputWriter();
@@ -108,7 +105,7 @@ public class TestJunit {
         assertEquals(testUserBuffer, oWriter.writeNewUsers(testTransBuffer, testUserBuffer, "testingFolder/CUA2.txt"));
     }
 
-    // For testing purposes, make sure avaliable-items-test.txt is open so you can undo after you run the testing code
+    // // For testing purposes, make sure avaliable-items-test.txt is open so you can undo after you run the testing code
     @Test
     public void writeNewItemTest() {
         OutputWriter iWriter = new OutputWriter();
@@ -144,7 +141,7 @@ public class TestJunit {
     }
 
     // // Delete User who does not exist
-    // @Test
+    @Test
     public void bufferNewUserDeleteDoesNotExistTest() {
         OutputWriter oWriter = new OutputWriter();
         OldUserFileReader uReader = new OldUserFileReader();
@@ -170,14 +167,13 @@ public class TestJunit {
         testItemBuffer.add("UOIT Water Bottle         John            NULL            019 599.99");
         testItemBuffer.add("UOIT Backpack             john            Bob             099 700.00");
         testItemBuffer.add("UOIT Backpack             john            Bob             099 700.00");
-        testItemBuffer.add("END");
                 
         oWriter.determineTransactionType(newUserBuffer, testItemBuffer, testTransBuffer);
 
         assertEquals(testUserBuffer, oWriter.writeNewUsers(testTransBuffer, newUserBuffer, "testingFolder/CUA3.txt"));
     }
-    // Delete User successfull
-    // For testing purposes, add testUser        FS 0000005.00 password .txt file
+    // // elete User successfull
+    // // For testing purposes, add testUser        FS 0000005.00 password .txt file
         @Test
         public void bufferNewUserDeleteTest() {
             OutputWriter oWriter = new OutputWriter();
@@ -212,7 +208,7 @@ public class TestJunit {
             assertEquals(testUserExpectedBuffer, oWriter.writeNewUsers(testTransBuffer, newUserBuffer, "testingFolder/CUA4.txt"));
         }
 
-            // Trys to make new user but existing already 
+            // // Trys to make new user but existing already 
             @Test
             public void bufferNewUserExisitingTest() {
                 OutputWriter oWriter = new OutputWriter();
@@ -249,7 +245,7 @@ public class TestJunit {
     
             }
 
-            Refund user successfull
+            // // Refund user successfull
             @Test
             public void bufferNewUserRefundTest() {
                 OutputWriter oWriter = new OutputWriter();
@@ -397,7 +393,7 @@ public class TestJunit {
     
             } 
 
-            // Add credit to non existant user
+            // // Add credit to non existant user
             @Test
             public void bufferNewUserAddCreditNATest() {
                 OutputWriter oWriter = new OutputWriter();
@@ -434,7 +430,7 @@ public class TestJunit {
     
             }
             
-            // Add credit to user with max credit
+            // // Add credit to user with max credit
             @Test
             public void bufferNewUserAddCreditMaxTest() {
                 OutputWriter oWriter = new OutputWriter();
@@ -471,7 +467,44 @@ public class TestJunit {
     
             }
 
-        // Buffering new item successful
+            // // Transaction not between 00-06
+            @Test
+            public void invalidTransNumTest() {
+                OutputWriter oWriter = new OutputWriter();
+                OldUserFileReader uReader = new OldUserFileReader();
+                Vector<String> testUserBuffer = new Vector<String>();
+                Vector<String> testUserExpectedBuffer = new Vector<String>();
+                Vector<String> testNewUserBuffer = new Vector<String>();
+                Vector<String> testItemBuffer = new Vector<String>();
+                Vector<String> testTransBuffer = new Vector<String>();
+            
+                testTransBuffer.add("07_John____________BS_000000500");
+        
+                testUserExpectedBuffer.add("Bob             AA 0000508.00 password");
+                testUserExpectedBuffer.add("Test            FS 0020005.10 passward");
+                testUserExpectedBuffer.add("John            FS 9999999.99 passward");
+                testUserExpectedBuffer.add("Mart            BS 0000000.00 password");
+                testUserExpectedBuffer.add("bobby           SS 0000470.00 password");
+                testUserExpectedBuffer.add("testerUser      BS 0001000.00 password");
+                testUserExpectedBuffer.add("testUser        FS 0000005.00 password");
+
+                Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUA12.txt");
+                Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
+    
+                testItemBuffer.add("macbook pro 16 i7 silver  John            Bob             899 700.00");
+                testItemBuffer.add("Not a less paul guitaree  John            NULL            049 699.99");
+                testItemBuffer.add("UOIT Water Bottle         John            NULL            019 599.99");
+                testItemBuffer.add("UOIT Backpack             john            Bob             099 700.00");
+                testItemBuffer.add("UOIT Backpack             john            Bob             099 700.00");
+                testItemBuffer.add("END");
+                        
+                oWriter.determineTransactionType(newUserBuffer, testItemBuffer, testTransBuffer);
+        
+                assertEquals(testUserExpectedBuffer, oWriter.writeNewUsers(testTransBuffer, newUserBuffer, "testingFolder/CUA12.txt"));
+    
+            }
+
+        // // Buffering new item successful
         @Test
         public void bufferNewItemsTest(){
             OutputWriter oWriter = new OutputWriter();
@@ -497,8 +530,7 @@ public class TestJunit {
             testItemExpectedBuffer.add("UOIT Water Bottle         John            NULL            009 599.99");
             testItemExpectedBuffer.add("UOIT Backpack             john            Bob             089 700.00");
             testItemExpectedBuffer.add("UOIT Backpack             john            Bob             089 700.00");
-            testItemExpectedBuffer.add("amazing guitar            John            Bob             050 050.00");
-            testItemExpectedBuffer.add("END");
+            testItemExpectedBuffer.add("amazing guitar            admin           NULL            050 050.00");
 
             Vector<String> oldItemBuffer = iReader.readItemFile("testingFolder/AI3.txt");
             Vector<String> newItemBuffer = new Vector<String>(oldItemBuffer);
@@ -508,8 +540,8 @@ public class TestJunit {
             assertEquals(testItemExpectedBuffer, oWriter.writeNewItems(testTransBuffer, newItemBuffer, testUserBuffer, "testingFolder/AI3.txt"));
         }
 
-        Loop coverage 
-        Test 1 No users, items, transactions
+        // // Loop coverage 
+        // // Test 1 No users, items, transactions
         @Test
         public void determineTransTypeLoopCoverage1() {
             OutputWriter oWriter = new OutputWriter();
@@ -532,7 +564,7 @@ public class TestJunit {
 
         }
 
-        // Test 2 single user, single item, single transactions
+        // // Test 2 single user, single item, single transactions
         @Test
         public void determineTransTypeLoopCoverage2() {
             OutputWriter oWriter = new OutputWriter();
@@ -558,7 +590,7 @@ public class TestJunit {
             assertEquals(testExpectedUsers, oWriter.writeNewUsers(transactionsBuffer, newUserBuffer, "testingFolder/CUALoop2.txt"));
         }
 
-        // Test 3, multiple users, items and transactions
+        // // Test 3, multiple users, items and transactions
         @Test
         public void determineTransTypeLoopCoverage3() {
             OutputWriter oWriter = new OutputWriter();

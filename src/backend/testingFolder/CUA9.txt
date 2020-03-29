@@ -6,3 +6,4 @@ bobby           SS 0000470.00 password
 testerUser      BS 0001000.00 password
 testUser        FS 0000005.00 password
 END
+END
