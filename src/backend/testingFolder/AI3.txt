@@ -3,5 +3,4 @@ Not a less paul guitaree  John            NULL            040 699.99
 UOIT Water Bottle         John            NULL            010 599.99
 UOIT Backpack             john            Bob             090 700.00
 UOIT Backpack             john            Bob             090 700.00
-amazing guitar            admin           NULL            050 050.00
 END
