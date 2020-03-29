@@ -1,6 +1,5 @@
-macbook pro 16 i7 silver  John            Bob             898 700.00
-Not a less paul guitaree  John            NULL            048 699.99
-UOIT Water Bottle         John            NULL            018 599.99
-UOIT Backpack             john            Bob             098 700.00
-UOIT Backpack             john            Bob             098 700.00
-END
+macbook pro 16 i7 silver  John            Bob             899 700.00
+Not a less paul guitaree  John            NULL            049 699.99
+UOIT Water Bottle         John            NULL            019 599.99
+UOIT Backpack             john            Bob             099 700.00
+UOIT Backpack             john            Bob             099 700.00
