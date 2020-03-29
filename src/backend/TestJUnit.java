@@ -194,6 +194,8 @@ public class TestJunit {
             testUserExpectedBuffer.add("bobby           SS 0000470.00 password");
             testUserExpectedBuffer.add("testerUser      BS 0001000.00 password");
             testUserExpectedBuffer.add("testUser        FS 0000005.00 password");
+            testUserExpectedBuffer.add("END");
+
 
             Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUA4.txt");
             Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
@@ -380,7 +382,7 @@ public class TestJunit {
                 testUserExpectedBuffer.add("John            FS 9999999.99 passward");
                 testUserExpectedBuffer.add("Mart            BS 0000000.00 password");
                 testUserExpectedBuffer.add("bobby           SS 0000470.00 password");
-                testUserExpectedBuffer.add("testerUser      BS 0001500.00 password");
+                testUserExpectedBuffer.add("testerUser      BS 0001000.00 password");
                 testUserExpectedBuffer.add("testUser        FS 0000005.00 password");
                 testUserExpectedBuffer.add("END");
 
@@ -533,6 +535,8 @@ public class TestJunit {
             testUserBuffer.add("bobby           SS 0000470.00 password");
             testUserBuffer.add("testerUser      BS 0001000.00 password");
             testUserBuffer.add("testUser        FS 0000005.00 password");
+            testUserBuffer.add("END");
+
 
             testItemExpectedBuffer.add("macbook pro 16 i7 silver  John            Bob             889 700.00");
             testItemExpectedBuffer.add("Not a less paul guitaree  John            NULL            039 699.99");
@@ -583,6 +587,7 @@ public class TestJunit {
             Vector<String> testExpectedItems = new Vector<String>();
 
             testExpectedUsers.add("Bob             AA 000506.000 password");
+            testExpectedUsers.add("END");
             testExpectedItems.add("macbook pro 16 i7 silver  John            Bob             898 700.00");
             testExpectedItems.add("END");
 
