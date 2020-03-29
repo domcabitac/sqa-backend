@@ -193,6 +193,7 @@ public class TestJunit {
             testUserExpectedBuffer.add("Mart            BS 0000000.00 password");
             testUserExpectedBuffer.add("bobby           SS 0000470.00 password");
             testUserExpectedBuffer.add("testerUser      BS 0001000.00 password");
+            testUserExpectedBuffer.add("testUser        FS 0000005.00 password")
 
             Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUA4.txt");
             Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
@@ -229,6 +230,7 @@ public class TestJunit {
                 testUserExpectedBuffer.add("bobby           SS 0000470.00 password");
                 testUserExpectedBuffer.add("testerUser      BS 0001000.00 password");
                 testUserExpectedBuffer.add("testUser        FS 0000005.00 password");
+                testUserExpectedBuffer.add("END");
 
                 Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUA5.txt");
                 Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
@@ -259,13 +261,14 @@ public class TestJunit {
             
                 testTransBuffer.add("05_John____________Bob_____________000002.00");
         
-                testUserExpectedBuffer.add("Bob             AA 000504.000 password");
+                testUserExpectedBuffer.add("Bob             AA 000506.000 password");
                 testUserExpectedBuffer.add("Test            FS 0020005.10 passward");
-                testUserExpectedBuffer.add("John            FS 000496.000 passward");
+                testUserExpectedBuffer.add("John            FS 000494.000 passward");
                 testUserExpectedBuffer.add("Mart            BS 0000000.00 password");
                 testUserExpectedBuffer.add("bobby           SS 0000470.00 password");
                 testUserExpectedBuffer.add("testerUser      BS 0001000.00 password");
                 testUserExpectedBuffer.add("testUser        FS 0000005.00 password");
+                testUserExpectedBuffer.add("END");
 
                 Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUA6.txt");
                 Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
@@ -303,6 +306,7 @@ public class TestJunit {
                 testUserExpectedBuffer.add("bobby           SS 0000470.00 password");
                 testUserExpectedBuffer.add("testerUser      BS 0001000.00 password");
                 testUserExpectedBuffer.add("testUser        FS 0000005.00 password");
+                testUserExpectedBuffer.add("END");
 
                 Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUA7.txt");
                 Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
@@ -340,6 +344,7 @@ public class TestJunit {
                 testUserExpectedBuffer.add("bobby           SS 0000470.00 password");
                 testUserExpectedBuffer.add("testerUser      BS 0001000.00 password");
                 testUserExpectedBuffer.add("testUser        FS 0000005.00 password");
+                testUserExpectedBuffer.add("END");
 
                 Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUA8.txt");
                 Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
@@ -377,6 +382,8 @@ public class TestJunit {
                 testUserExpectedBuffer.add("bobby           SS 0000470.00 password");
                 testUserExpectedBuffer.add("testerUser      BS 0001500.00 password");
                 testUserExpectedBuffer.add("testUser        FS 0000005.00 password");
+                testUserExpectedBuffer.add("END");
+
 
                 Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUA9.txt");
                 Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
@@ -488,6 +495,7 @@ public class TestJunit {
                 testUserExpectedBuffer.add("bobby           SS 0000470.00 password");
                 testUserExpectedBuffer.add("testerUser      BS 0001000.00 password");
                 testUserExpectedBuffer.add("testUser        FS 0000005.00 password");
+                testUserExpectedBuffer.add("END");
 
                 Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUA12.txt");
                 Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
@@ -531,7 +539,6 @@ public class TestJunit {
             testItemExpectedBuffer.add("UOIT Water Bottle         John            NULL            009 599.99");
             testItemExpectedBuffer.add("UOIT Backpack             john            Bob             089 700.00");
             testItemExpectedBuffer.add("UOIT Backpack             john            Bob             089 700.00");
-            testItemExpectedBuffer.add("amazing guitar            admin           NULL            050 050.00");
 
             Vector<String> oldItemBuffer = iReader.readItemFile("testingFolder/AI3.txt");
             Vector<String> newItemBuffer = new Vector<String>(oldItemBuffer);
@@ -577,6 +584,7 @@ public class TestJunit {
 
             testExpectedUsers.add("Bob             AA 000506.000 password");
             testExpectedItems.add("macbook pro 16 i7 silver  John            Bob             898 700.00");
+            testExpectedItems.add("END");
 
             Vector<String> transactionsBuffer = tReader.readMergedTransaction("testingFolder/DTLoop2.txt");
             Vector<String> oldUserBuffer = uReader.readUserFile("testingFolder/CUALoop2.txt");
