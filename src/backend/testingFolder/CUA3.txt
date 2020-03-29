@@ -4,4 +4,3 @@ John            FS 000496.000 passward
 Mart            BS 0000000.00 password
 bobby           SS 0000470.00 password
 testerUser      BS 0001000.00 password
-END

@@ -531,7 +531,7 @@ public class TestJunit {
             testItemExpectedBuffer.add("UOIT Water Bottle         John            NULL            009 599.99");
             testItemExpectedBuffer.add("UOIT Backpack             john            Bob             089 700.00");
             testItemExpectedBuffer.add("UOIT Backpack             john            Bob             089 700.00");
-            testItemExpectedBuffer.add("amazing guitar            John            Bob             050 050.00");
+            testItemExpectedBuffer.add("amazing guitar            admin           NULL            050 050.00");
 
             Vector<String> oldItemBuffer = iReader.readItemFile("testingFolder/AI3.txt");
             Vector<String> newItemBuffer = new Vector<String>(oldItemBuffer);
