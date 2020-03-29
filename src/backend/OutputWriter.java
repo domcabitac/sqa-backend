@@ -31,12 +31,8 @@ public class OutputWriter {
             
             // loop to assign the index of the matching user
             for (int j = 0; j < newUserBuffer.size(); j++) {
-                //System.out.println("current: " + currentUser);
-                //System.out.println("buffer: " + newUserBuffer.get(j).substring(0,16));
-
                 if ((newUserBuffer.get(j).substring(0, 16)).equals(currentUser)) {
                     index = j;
-                    //System.out.println("s index: " + j);
                     break;
                 }
             }
@@ -55,12 +51,8 @@ public class OutputWriter {
             
             // loop to assign the index of the matching user
             for (int j = 0; j < newUserBuffer.size(); j++) {
-                //System.out.println("current: " + currentUser);
-                //System.out.println("buffer: " + newUserBuffer.get(j).substring(0,16));
-
                 if ((newUserBuffer.get(j).substring(0, 16)).equals(currentUser)) {
                     index = j;
-                    //System.out.println("s index: " + j);
                     break;
                 }
             }
@@ -72,40 +64,6 @@ public class OutputWriter {
             } else {
                 System.out.println("ERROR: User does not exist! Transaction rejected! Type: Delete");
             }  
-        // check if current transaction is BID
-        /*} else if (currentTransaction.substring(0,2).contains("04")) {
-            String buyer = currentTransaction.substring(45, 60);
-            String bid = currentTransaction.substring(61, 67);
-
-            int index = -1;
-            
-            // loop to assign the index of the matching user
-            for (int j = 0; j < newUserBuffer.size(); j++) {
-                //System.out.println(buyer.replace(" ", "_"));
-                //System.out.println(newUserBuffer.get(j).substring(0,15).replace(" ", "_"));
-                if ((newUserBuffer.get(j).substring(0, 15)).equals(buyer)) {
-                    index = j;
-                    System.out.println("s index: " + j);
-                    break;
-                }
-            }
-            // check if user exists 
-            if (index >= 0) {
-                double newCredit = Double.parseDouble(newUserBuffer.get(index).substring(20, 26)) - Double.parseDouble(bid); 
-                // if credits after bidding is 0 or greater
-                if (newCredit >= 0) {
-                    char[] zeroes = new char[9 - (Double.toString(newCredit)).length()];
-                    Arrays.fill(zeroes, '0');
-                    String buyerZeroes = new String(zeroes); 
-                    
-                    // create the new user with the loss of money spent on bid
-                    String newUser = newUserBuffer.get(index).substring(0, 19) + buyerZeroes + Double.toString(newCredit) + "0 " + newUserBuffer.get(index).substring(30, 38); 
-                    System.out.println("newUser: " + newUser);
-                    newUserBuffer.set(index, newUser);  
-                } else if (newCredit < 0) {
-                    System.out.println("ERROR: Not enough credits! Type: Bid");
-                } 
-            }*/
         // check if current transaction is REFUND
         } else if (currentTransaction.substring(0,2).contains("05")) {
             int buyerIndex = -1; 
@@ -114,16 +72,10 @@ public class OutputWriter {
             String buyer = currentTransaction.substring(3, 18);
             String seller = currentTransaction.substring(19, 34);
             String amount = currentTransaction.substring(35, 43);
-            
-            //System.out.println(seller.replace(" ", "_"));
-            //System.out.println(buyer.replace(" ", "_"));
 
             // loop to assign the sellerindex of the matching user
             for (int j = 0; j < newUserBuffer.size()-1; j++) {
-                //System.out.println(seller.replace(" ", "_"));
-                //System.out.println(newUserBuffer.get(j).substring(0, 15).replace(" ", "_"));
                 if ((newUserBuffer.get(j).substring(0, 15)).equals(seller)) {
-                    //System.out.println("s index: " + j);
                     sellerIndex = j;
                     break;
                 }
@@ -131,10 +83,7 @@ public class OutputWriter {
 
             // loop to assign the buyerindex of the matching user
             for (int j = 0; j < newUserBuffer.size()-1; j++) {
-                //System.out.println(buyer.replace(" ", "_"));
-                //System.out.println(newUserBuffer.get(j).substring(0, 15).replace(" ", "_"));
                 if ((newUserBuffer.get(j).substring(0, 15)).equals(buyer)) {
-                    System.out.println("b index: " + j);
                     buyerIndex = j;
                     break;
                 }
@@ -155,26 +104,18 @@ public class OutputWriter {
                     double newSellerCredit = sellerCredit - Double.parseDouble(amount);
                     double newBuyerCredit = buyerCredit + Double.parseDouble(amount);
 
-                    //System.out.println("New Buyer Credit: " + newBuyerCredit);
-                    //System.out.println("New Seller Credit: " + newSellerCredit);
-
                     // Zero formating for both seller and buyer
                     char[] sellerZeroes = new char[7 - (Double.toString(newSellerCredit)).length()];
                     Arrays.fill(sellerZeroes, '0');
                     String extraSellerZero = new String(sellerZeroes); 
-                    //System.out.println("Seller zeroes: " + extraSellerZero);
 
                     char[] buyerZeroes = new char[7 - (Double.toString(newBuyerCredit)).length()];
                     Arrays.fill(buyerZeroes, '0');
                     String extraBuyerZero = new String(buyerZeroes); 
-                    //System.out.println("Buyer zeroes: " + extraBuyerZero);
 
                     // create new entries for the buffer
                     String newSeller = newUserBuffer.get(sellerIndex).substring(0, 20) + extraSellerZero + newSellerCredit + newUserBuffer.get(sellerIndex).substring(27, 38);
                     String newBuyer = newUserBuffer.get(buyerIndex).substring(0, 20) + extraBuyerZero + newBuyerCredit + newUserBuffer.get(buyerIndex).substring(27, 38);
-                    
-                    System.out.println(newSeller);
-                    System.out.println(newBuyer);
 
                     // overwrite indices with new seller and buyer 
                     newUserBuffer.set(sellerIndex, newSeller);
@@ -192,11 +133,8 @@ public class OutputWriter {
             
             // loop to assign the index of the matching user
             for (int j = 0; j < newUserBuffer.size(); j++) {
-                //System.out.println(user.replace(" ", "_"));
-                //System.out.println(newUserBuffer.get(j).substring(0,15).replace(" ", "_"));
                 if ((newUserBuffer.get(j).substring(0, 15)).equals(user)) {
                     index = j;
-                    //System.out.println("s index: " + j);
                     break;
                 }
             }
@@ -210,7 +148,6 @@ public class OutputWriter {
                     char[] zeroes = new char[8 - (Double.toString(newCredits)).length()];
                     Arrays.fill(zeroes, '0');
                     String extraZeroes = new String(zeroes); 
-                    //System.out.println("Buyer zeroes: " + extraBuyerZero);
 
                     String newUser = newUserBuffer.get(index).substring(0, 20) + extraZeroes + newCredits + "0" + newUserBuffer.get(index).substring(29, 38);
                     newUserBuffer.set(index, newUser);
@@ -222,10 +159,7 @@ public class OutputWriter {
                 // user does not exist error 
                 System.out.println("ERROR: User not found! Type: Add Credit");
             }
-        } else {
-            // catch all error if no transactions have occurred
-            System.out.println("ERROR: Invalid Transaction! Type: Transaction");
-        }
+        } 
     }
     
     // OutputWriter class method to update items txt file, which will use newItemBuffer and manipulate it with transactionBuffer
@@ -236,7 +170,6 @@ public class OutputWriter {
         // check if current transaction is advertise
         if (currentTransaction.substring(0,2).contains("03")) {
             String newEntry = currentTransaction.substring(3, 45) + "NULL            " + currentTransaction.substring(45, currentTransaction.length());
-            System.out.println(newEntry);
             newItemBuffer.add(newEntry);
         // check if current transaction is BID
         } else if (currentTransaction.substring(0,2).contains("04")) {
@@ -251,15 +184,12 @@ public class OutputWriter {
                     String newBid = currentTransaction.substring(60, 67);
                     String newItem = currentItem + currentSeller + newBidder + currentAuctionDays + newBid;
                     newItem = newItem.replace("_", " ");
-                    System.out.println("New item: " + newItem);
 
                     // replacing old item with new item
                     newItemBuffer.set(i, newItem);
                 }
             }
-        } else {
-            System.out.println("ERROR: Invalid Transaction! Type: Transaction");
-        }
+        } 
     }
     
     // OutputWriter class function that will write the changed user buffer to the file
@@ -305,8 +235,6 @@ public class OutputWriter {
                     String seller = newItemBuffer.get(i).substring(26, 42);
                     String buyer = newItemBuffer.get(i).substring(42, 58);
                     String winningBid = newItemBuffer.get(i).substring(62, 68);
-
-                    //System.out.println("Winning bid: " + winningBid);
                    
                     String currentSeller = newItemBuffer.get(i).substring(26, 40);
                     String currentAuctionDays = newItemBuffer.get(i).substring(59, 61);
@@ -314,7 +242,7 @@ public class OutputWriter {
                     if (buyer.trim().equals("NULL") || buyer.trim().equals(null) || buyer.trim().equals("")|| 
                         seller.trim().equals("NULL") || buyer.trim().equals(null) || buyer.trim().equals("")) {
                         newItemBuffer.remove(i);
-                        System.out.println("Stopping transaction, no bidder or seller for this item!");
+                        System.out.println("ERROR: Stopping transaction, no bidder or seller for this item! Type: Transaction");
                         break;
                     }  
 
@@ -322,7 +250,6 @@ public class OutputWriter {
                     for (int j = 0; j < newUserBuffer.size()-1; j++) {
                         if ((newUserBuffer.get(j).substring(0, 16)).equals(seller)) {
                             sellerIndex = j;
-                            //System.out.println("s index: " + j);
                             break;
                         }
                     }
@@ -331,7 +258,6 @@ public class OutputWriter {
                     for (int j = 0; j < newUserBuffer.size()-1; j++) {
                         if ((newUserBuffer.get(j).substring(0, 16)).equals(buyer)) {
                             buyerIndex = j;
-                            //System.out.println("b index: " + j);
                             break;
                         }
                     }
@@ -347,26 +273,18 @@ public class OutputWriter {
                         } else {
                             double newSellerCredit = sellerCredit + Double.parseDouble(winningBid);
                             double newBuyerCredit = buyerCredit - Double.parseDouble(winningBid);
-
-                            //System.out.println("New Buyer Credit: " + newBuyerCredit);
-                            //System.out.println("New Seller Credit: " + newSellerCredit);
     
                             // adjust add extra zeroes for seller
                             char[] sellerZeroes = new char[7 - (Double.toString(newSellerCredit)).length()];
                             Arrays.fill(sellerZeroes, '0');
                             String extraSellerZero = new String(sellerZeroes); 
-                            //System.out.println("Seller zeroes: " + extraSellerZero);
     
                             char[] buyerZeroes = new char[7 - (Double.toString(newBuyerCredit)).length()];
                             Arrays.fill(buyerZeroes, '0');
                             String extraBuyerZero = new String(buyerZeroes); 
-                            //System.out.println("Buyer zeroes: " + extraBuyerZero);
     
                             String newSeller = newUserBuffer.get(sellerIndex).substring(0, 20) + extraSellerZero + newSellerCredit + newUserBuffer.get(sellerIndex).substring(27, 38);
                             String newBuyer = newUserBuffer.get(buyerIndex).substring(0, 20) + extraBuyerZero + newBuyerCredit + newUserBuffer.get(buyerIndex).substring(27, 38);
-                            
-                            System.out.println(newSeller);
-                            System.out.println(newBuyer);
 
                             // overwrite the buffer with the new values
                             newUserBuffer.set(sellerIndex, newSeller);
@@ -387,8 +305,7 @@ public class OutputWriter {
                     // create the new item and overwrite the buffer with it
                     String newItem = newItemBuffer.get(i).substring(0, 58) + extraZero + newAuctionDays + newItemBuffer.get(i).substring(61, 68);
                     newItemBuffer.set(i, newItem);
-                // }
-                System.out.println(newItemBuffer.get(i));
+                }
             }
 
             // creates a new file writer and writes to it
@@ -430,6 +347,8 @@ public class OutputWriter {
             } if (transactionsBuffer.get(i).substring(0,2).contains("03") || transactionsBuffer.get(i).substring(0,2).contains("04")) {
                 System.out.println("Writing to items...");
                 bufferNewItems(newItemBuffer, transactionsBuffer.get(i));
+            } else {
+                System.out.println("ERROR: Invalid transaction! Type: Transaction");
             }
         }
         return transactionsBuffer;
