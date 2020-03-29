@@ -74,7 +74,7 @@ public class OutputWriter {
             String amount = currentTransaction.substring(35, 43);
 
             // loop to assign the sellerindex of the matching user
-            for (int j = 0; j < newUserBuffer.size()-1; j++) {
+            for (int j = 0; j < newUserBuffer.size(); j++) {
                 if ((newUserBuffer.get(j).substring(0, 15)).equals(seller)) {
                     sellerIndex = j;
                     break;
@@ -82,7 +82,7 @@ public class OutputWriter {
             }
 
             // loop to assign the buyerindex of the matching user
-            for (int j = 0; j < newUserBuffer.size()-1; j++) {
+            for (int j = 0; j < newUserBuffer.size(); j++) {
                 if ((newUserBuffer.get(j).substring(0, 15)).equals(buyer)) {
                     buyerIndex = j;
                     break;
@@ -199,9 +199,6 @@ public class OutputWriter {
             FileWriter oFileWriter = new FileWriter(usersFileName);
             for (int i = 0; i < newUserBuffer.size(); i++) {
                 oFileWriter.write(newUserBuffer.get(i) + "\n");
-                if (newUserBuffer.get(i).trim().equals("END")) {
-                    newUserBuffer.remove(i);
-                }
                 if (i == newUserBuffer.size()-1) {
                     // add END to mark the end of the file, 
                     oFileWriter.write("END");
@@ -247,7 +244,7 @@ public class OutputWriter {
                     }  
 
                     // loop to assign the index of the matching user
-                    for (int j = 0; j < newUserBuffer.size()-1; j++) {
+                    for (int j = 0; j < newUserBuffer.size(); j++) {
                         if ((newUserBuffer.get(j).substring(0, 16)).equals(seller)) {
                             sellerIndex = j;
                             break;
@@ -255,7 +252,7 @@ public class OutputWriter {
                     }
 
                     // loop to assign the index of the matching user
-                    for (int j = 0; j < newUserBuffer.size()-1; j++) {
+                    for (int j = 0; j < newUserBuffer.size(); j++) {
                         if ((newUserBuffer.get(j).substring(0, 16)).equals(buyer)) {
                             buyerIndex = j;
                             break;
@@ -305,24 +302,22 @@ public class OutputWriter {
                     // create the new item and overwrite the buffer with it
                     String newItem = newItemBuffer.get(i).substring(0, 58) + extraZero + newAuctionDays + newItemBuffer.get(i).substring(61, 68);
                     newItemBuffer.set(i, newItem);
-                //}
                 }
-
-                // creates a new file writer and writes to it
-                FileWriter oFileWriter = new FileWriter(itemsFileName);
-                for (int j = 0; j < newItemBuffer.size(); j++) {
-                    oFileWriter.write(newItemBuffer.get(j) + "\n");
-                    if (newItemBuffer.get(j).trim().equals("END")) {
-                        newItemBuffer.remove(j);
-                    }
-                    if (j == newItemBuffer.size()-1) {
-                        oFileWriter.write("END");
-                    }
-                }
-
-                System.out.println("Writing new items...");
-                oFileWriter.close();
+                System.out.println(newItemBuffer.get(i));
             }
+
+            // creates a new file writer and writes to it
+            FileWriter oFileWriter = new FileWriter(itemsFileName);
+            for (int j = 0; j < newItemBuffer.size(); j++) {
+                oFileWriter.write(newItemBuffer.get(j) + "\n");
+                if (j == newItemBuffer.size()-1) {
+                    // add END to the end of the file
+                    oFileWriter.write("END");
+                }
+            }
+
+            System.out.println("Writing new items...");
+            oFileWriter.close();
         // exceptions for file not existing, or if there was a problem with writing the file
         } catch (FileNotFoundException e) {
             System.out.println("File not found" + e);
@@ -336,19 +331,19 @@ public class OutputWriter {
     /* OutputWriter class method to determine which file to update. It will use currentTransaction, newUserBuffer, newItemBuffer, transactionsBuffer 
         and OutputFilepath to update the corresponding txt file */
     public Vector<String> determineTransactionType(Vector<String> newUserBuffer, Vector<String> newItemBuffer, Vector<String> transactionsBuffer) {
-        for (int i = 0; i < transactionsBuffer.size(); i++) {
-            System.out.println("Transaction: " + transactionsBuffer.get(i));
+        for (int i = 0; i < transactionsBuffer.size()-1; i++) {
+            // System.out.println("Transaction: " + transactionsBuffer.get(i));
             // takes in the current transaction from the transaction buffer, and determines if its user or items file affected
             // transactions that affect users are Create, Delete, Refund, Bid and Add Credit
             if (transactionsBuffer.get(i).substring(0,2).contains("01") || transactionsBuffer.get(i).substring(0,2).contains("02") || 
                 transactionsBuffer.get(i).substring(0,2).contains("05") || transactionsBuffer.get(i).substring(0,2).contains("06")) {
-                System.out.println("Writing to users...");
+                // System.out.println("Writing to users...");
                 bufferNewUsers(newUserBuffer, transactionsBuffer.get(i));
             // transactions that affect items are bid and advertise
-            } if (transactionsBuffer.get(i).substring(0,2).contains("03") || transactionsBuffer.get(i).substring(0,2).contains("04")) {
-                System.out.println("Writing to items...");
+            } else if (transactionsBuffer.get(i).substring(0,2).contains("03") || transactionsBuffer.get(i).substring(0,2).contains("04")) {
+                // System.out.println("Writing to items...");
                 bufferNewItems(newItemBuffer, transactionsBuffer.get(i));
-            } else if (!transactionsBuffer.get(i).substring(0, 2).contains("00")) {
+            } else {
                 System.out.println("ERROR: Invalid transaction! Type: Transaction");
             }
         }
@@ -377,6 +372,9 @@ public class OutputWriter {
                 // creating the buffers to overwrite with
                 Vector<String> newUserBuffer = new Vector<String>(oldUserBuffer);
                 Vector<String> newItemBuffer = new Vector<String>(oldItemBuffer);
+
+                newUserBuffer.remove(newUserBuffer.indexOf("END"));
+                newItemBuffer.remove(newItemBuffer.indexOf("END"));
 
                 // Testing transaction that olny affect items here
                 oWriter.determineTransactionType(newUserBuffer, newItemBuffer, transactionsBuffer);

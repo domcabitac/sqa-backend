@@ -1,14 +1,6 @@
-macbook pro 16 i7 silver  John            Bob             862 700.00
-Not a less paul guitaree  John            NULL            012 699.99
-UOIT Backpack             john            admin           063 010.00
-UOIT Backpack             john            admin           063 010.00
-theworsttitemthereis!!    john            admin           084 010.00
-amazing guitar            admin           NULL            043 050.00
-amazing guitar            admin           NULL            044 050.00
-amazing guitar            admin           NULL            045 050.00
-amazing guitar            admin           NULL            046 050.00
-amazing guitar            admin           NULL            047 050.00
-amazing guitar            admin           NULL            048 050.00
-amazing guitar            admin           NULL            049 050.00
+macbook pro 16 i7 silver  John            Bob             840 700.00
+UOIT Backpack             john            admin           042 010.00
+UOIT Backpack             john            admin           042 010.00
+theworsttitemthereis!!    john            admin           063 010.00
 amazing guitar            admin           NULL            050 050.00
 END
