@@ -7,11 +7,27 @@
 
 available_items="./frontend/available-items.txt"
 current_users="./frontend/current-user-accounts.txt"
-daily_transactions="./backend/daily-transactions.txt"
+daily_transactions="./frontend/daily-transactions.txt"
 test_input="daily-input0.txt"
 mergeTrans="./backend/mergeTrans.txt"
+tempUser="./backend/tempUser.txt"
+tempItem="./backend/tempItem.txt"
 
-./frontend/./RUN_FRONTEND $available_items $current_users $daily_transactions < $test_input
+rm $tempUser
+touch $tempUser
+for uFile in $current_users* ; do
+    echo $uFile
+    cat $uFile >> $tempUser
+done
+
+rm $tempItem
+touch $tempItem
+for iFile in $available_items* ; do
+    echo $iFile
+    cat $iFile >> $tempItem
+done
+
+./frontend/./RUN_FRONTEND $tempItem $tempUser $daily_transactions < $test_input
 
 rm $mergeTrans
 touch $mergeTrans
@@ -22,3 +38,4 @@ done
 
 cd ./backend/
 make run
+
