@@ -6,4 +6,5 @@ dom
 tester
 FS
 500
+logout
 exit
