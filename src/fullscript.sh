@@ -36,41 +36,41 @@ for transFile in $daily_transactions* ; do
     cat $transFile >> $mergeTrans
 done
 
-cd ./backend/
-make run
+# cd ./backend/
+# make run
 
 # cd -
 available_items2="./backend/available-items.txt"
 current_users2="./backend/current-user-accounts.txt"
-# test_input2="daily-input-2.txt"
+test_input2="daily-input-2.txt"
 
-# rm $tempUser
-# touch $tempUser
-# for uFile in $current_users2* ; do
-#     echo $uFile
-#     cat $uFile >> $tempUser
-# done
+rm $tempUser
+touch $tempUser
+for uFile in $current_users2* ; do
+    echo $uFile
+    cat $uFile >> $tempUser
+done
 
-# rm $tempItem
-# touch $tempItem
-# for iFile in $available_items2* ; do
-#     echo $iFile
-#     cat $iFile >> $tempItem
-# done
+rm $tempItem
+touch $tempItem
+for iFile in $available_items2* ; do
+    echo $iFile
+    cat $iFile >> $tempItem
+done
 
-# ./frontend/./RUN_FRONTEND $tempItem $tempUser $daily_transactions < $test_input2
+./frontend/./RUN_FRONTEND $tempItem $tempUser $daily_transactions < $test_input2
 
-# rm $mergeTrans
-# touch $mergeTrans
-# for transFile in $daily_transactions* ; do
-#     echo $transFile
-#     cat $transFile >> $mergeTrans
-# done
+rm $mergeTrans
+touch $mergeTrans
+for transFile in $daily_transactions* ; do
+    echo $transFile
+    cat $transFile >> $mergeTrans
+done
 
 # cd ./backend/
 # make run
 
-cd -
+# cd -
 test_input3="daily-input-3.txt"
 
 rm $tempUser
@@ -96,34 +96,63 @@ for transFile in $daily_transactions* ; do
     cat $transFile >> $mergeTrans
 done
 
-cd ./backend/
-make run
+# cd ./backend/
+# make run
 
 # cd -
-# test_input4="daily-input-4.txt"
+test_input4="daily-input-4.txt"
 
-# rm $tempUser
-# touch $tempUser
-# for uFile in $current_users2* ; do
-#     echo $uFile
-#     cat $uFile >> $tempUser
-# done
+rm $tempUser
+touch $tempUser
+for uFile in $current_users2* ; do
+    echo $uFile
+    cat $uFile >> $tempUser
+done
 
-# rm $tempItem
-# touch $tempItem
-# for iFile in $available_items2* ; do
-#     echo $iFile
-#     cat $iFile >> $tempItem
-# done
+rm $tempItem
+touch $tempItem
+for iFile in $available_items2* ; do
+    echo $iFile
+    cat $iFile >> $tempItem
+done
 
-# ./frontend/./RUN_FRONTEND $tempItem $tempUser $daily_transactions < $test_input4
+./frontend/./RUN_FRONTEND $tempItem $tempUser $daily_transactions < $test_input4
 
-# rm $mergeTrans
-# touch $mergeTrans
-# for transFile in $daily_transactions* ; do
-#     echo $transFile
-#     cat $transFile >> $mergeTrans
-# done
+rm $mergeTrans
+touch $mergeTrans
+for transFile in $daily_transactions* ; do
+    echo $transFile
+    cat $transFile >> $mergeTrans
+done
 
 # cd ./backend/
 # make run
+
+# cd -
+test_input5="daily-input-5.txt"
+
+rm $tempUser
+touch $tempUser
+for uFile in $current_users2* ; do
+    echo $uFile
+    cat $uFile >> $tempUser
+done
+
+rm $tempItem
+touch $tempItem
+for iFile in $available_items2* ; do
+    echo $iFile
+    cat $iFile >> $tempItem
+done
+
+./frontend/./RUN_FRONTEND $tempItem $tempUser $daily_transactions < $test_input5
+
+rm $mergeTrans
+touch $mergeTrans
+for transFile in $daily_transactions* ; do
+    echo $transFile
+    cat $transFile >> $mergeTrans
+done
+
+cd ./backend/
+make run

@@ -1,10 +1,6 @@
 login
 Test
 passward
-bid
-bob
-Les Paul Guitar    
-550
 advertise
 Laptop
 50
