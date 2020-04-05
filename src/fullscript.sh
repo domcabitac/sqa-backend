@@ -12,6 +12,7 @@ test_input="daily-input-1.txt"
 mergeTrans="./backend/mergeTrans.txt"
 tempUser="./backend/tempUser.txt"
 tempItem="./backend/tempItem.txt"
+dailyTransRes="Daily_Transactions_Results.txt"
 
 rm $tempUser
 touch $tempUser
@@ -34,9 +35,9 @@ touch $mergeTrans
 for transFile in $daily_transactions* ; do
     echo $transFile
     cat $transFile >> $mergeTrans
-    echo "Day 1 Transactions"
-    cat $daily_transactions
-    echo "____________________________________________________________________________________"
+    echo "Day 1 Transactions" >> $dailyTransRes
+    cat $daily_transactions >> $dailyTransRes
+    echo "____________________________________________________________________________________" >> $dailyTransRes
 done
 
 # cd ./backend/
@@ -68,9 +69,9 @@ touch $mergeTrans
 for transFile in $daily_transactions* ; do
     echo $transFile
     cat $transFile >> $mergeTrans
-    echo "Day 2 Transactions"
-    cat $daily_transactions
-    echo "____________________________________________________________________________________"
+    echo "Day 2 Transactions" >> $dailyTransRes
+    cat $daily_transactions >> $dailyTransRes
+    echo "____________________________________________________________________________________" >> $dailyTransRes
 done
 
 # cd ./backend/
@@ -100,9 +101,9 @@ touch $mergeTrans
 for transFile in $daily_transactions* ; do
     echo $transFile
     cat $transFile >> $mergeTrans
-    echo "Day 3 Transactions"
-    cat $daily_transactions
-    echo "____________________________________________________________________________________"
+    echo "Day 3 Transactions" >> $dailyTransRes
+    cat $daily_transactions >> $dailyTransRes
+    echo "____________________________________________________________________________________" >> $dailyTransRes
 done
 
 # cd ./backend/
@@ -132,9 +133,9 @@ touch $mergeTrans
 for transFile in $daily_transactions* ; do
     echo $transFile
     cat $transFile >> $mergeTrans
-    echo "Day 4 Transactions"
-    cat $daily_transactions
-    echo "____________________________________________________________________________________"
+    echo "Day 4 Transactions" >> $dailyTransRes
+    cat $daily_transactions >> $dailyTransRes
+    echo "____________________________________________________________________________________" >> $dailyTransRes
 done
 
 # cd ./backend/
@@ -164,9 +165,9 @@ touch $mergeTrans
 for transFile in $daily_transactions* ; do
     echo $transFile
     cat $transFile >> $mergeTrans
-    echo "Day 5 Transactions"
-    cat $daily_transactions
-    echo "____________________________________________________________________________________"
+    echo "Day 5 Transactions" >> $dailyTransRes
+    cat $daily_transactions >> $dailyTransRes
+    echo "____________________________________________________________________________________" >> $dailyTransRes
 done
 
 cd ./backend/
