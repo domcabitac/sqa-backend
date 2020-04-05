@@ -14,7 +14,7 @@ JVM= java
  classes: $(CLASSES:.java=.class)
 
  run : classes 
-	$(JVM) OutputWriter daily-transactions.txt current-user-accounts.txt available-items-test.txt
+	$(JVM) OutputWriter mergeTrans.txt current-user-accounts.txt available-items-test.txt
 
  test : 
 	export CLASSPATH=$CLASSPATH:./junit-4.13.jar:./hamcrest-core-1.3.jar:./org.apache.commons.io.jar
