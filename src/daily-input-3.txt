@@ -2,7 +2,8 @@ login
 Test
 passward
 bid
-Les Paul Guitar                
+bobby
+Scooter
 550
 advertise
 Laptop
