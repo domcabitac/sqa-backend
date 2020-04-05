@@ -34,6 +34,9 @@ touch $mergeTrans
 for transFile in $daily_transactions* ; do
     echo $transFile
     cat $transFile >> $mergeTrans
+    echo "Day 1 Transactions"
+    cat $daily_transactions
+    echo "____________________________________________________________________________________"
 done
 
 # cd ./backend/
@@ -65,6 +68,9 @@ touch $mergeTrans
 for transFile in $daily_transactions* ; do
     echo $transFile
     cat $transFile >> $mergeTrans
+    echo "Day 2 Transactions"
+    cat $daily_transactions
+    echo "____________________________________________________________________________________"
 done
 
 # cd ./backend/
@@ -94,6 +100,9 @@ touch $mergeTrans
 for transFile in $daily_transactions* ; do
     echo $transFile
     cat $transFile >> $mergeTrans
+    echo "Day 3 Transactions"
+    cat $daily_transactions
+    echo "____________________________________________________________________________________"
 done
 
 # cd ./backend/
@@ -123,6 +132,9 @@ touch $mergeTrans
 for transFile in $daily_transactions* ; do
     echo $transFile
     cat $transFile >> $mergeTrans
+    echo "Day 4 Transactions"
+    cat $daily_transactions
+    echo "____________________________________________________________________________________"
 done
 
 # cd ./backend/
@@ -152,7 +164,11 @@ touch $mergeTrans
 for transFile in $daily_transactions* ; do
     echo $transFile
     cat $transFile >> $mergeTrans
+    echo "Day 5 Transactions"
+    cat $daily_transactions
+    echo "____________________________________________________________________________________"
 done
-
+    echo "Week Transactions"
+    cat $mergeTrans
 cd ./backend/
 make run

@@ -47,5 +47,8 @@ for transFile in $daily_transactions* ; do
     cat $transFile >> $mergeTrans
 done
 
+
+cat $mergeTrans
+
 cd ./backend/
 make run
