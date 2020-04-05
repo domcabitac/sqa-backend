@@ -168,7 +168,6 @@ for transFile in $daily_transactions* ; do
     cat $daily_transactions
     echo "____________________________________________________________________________________"
 done
-    echo "Week Transactions"
-    cat $mergeTrans
+
 cd ./backend/
 make run
