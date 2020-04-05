@@ -1,0 +1,9 @@
+login
+Mart
+password
+bid
+John
+macbook pro 16 i7 silver
+700
+logout
+exit
