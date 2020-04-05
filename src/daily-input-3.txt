@@ -1,0 +1,11 @@
+login
+Test
+passward
+bid
+Les Paul Guitar                
+550
+advertise
+Laptop
+50
+logout
+exit
