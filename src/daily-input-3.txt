@@ -2,7 +2,7 @@ login
 Test
 passward
 bid
-bobby
+bob
 Scooter
 550
 advertise
