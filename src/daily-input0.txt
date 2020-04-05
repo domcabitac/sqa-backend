@@ -1,0 +1,9 @@
+login
+bob
+password
+create
+dom
+tester
+FS
+500
+exit
