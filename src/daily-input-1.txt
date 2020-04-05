@@ -6,5 +6,9 @@ dom
 tester
 FS
 500
+advertise
+Scooter
+500
+99
 logout
 exit
