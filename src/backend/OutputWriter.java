@@ -42,7 +42,7 @@ public class OutputWriter {
                 System.out.println("ERROR: User already exists! Transaction rejected! Type: Create");
             // otherwise, add user to buffer
             } else {
-                currentUser = currentTransaction.substring(3, 29) + ".00 password";
+                currentUser = currentTransaction.substring(3, 23) + "0" + currentTransaction.substring(23,28) + ".00 password";
                 newUserBuffer.add(currentUser);
             } 
         // check if current transaction is DELETE
