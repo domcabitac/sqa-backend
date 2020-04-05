@@ -43,6 +43,7 @@ public class OutputWriter {
             // otherwise, add user to buffer
             } else {
                 currentUser = currentTransaction.substring(3, 29) + ".00 password";
+                System.out.println(currentUser);
                 newUserBuffer.add(currentUser);
             } 
         // check if current transaction is DELETE
