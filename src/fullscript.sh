@@ -15,6 +15,7 @@ tempItem="./backend/tempItem.txt"
 dailyTransRes="Daily_Transactions_Results.txt"
 itemResult="Item_Results.txt"
 
+# dumping current users into a temp user file
 rm $tempUser
 touch $tempUser
 for uFile in $current_users* ; do
@@ -22,6 +23,7 @@ for uFile in $current_users* ; do
     cat $uFile >> $tempUser
 done
 
+# dumping current items into a temp item file
 rm $tempItem
 touch $tempItem
 for iFile in $available_items* ; do
@@ -31,9 +33,10 @@ for iFile in $available_items* ; do
     cat $tempItem >> $itemResult
     echo "\n----------------------------------------------------------------------------------" >> $itemResult
 done
-
+# running front end with tempitem and tempuser, using test input for daily transactions
 ./frontend/./RUN_FRONTEND $tempItem $tempUser $daily_transactions < $test_input
 
+# merge transactions from day 1 and prints them
 rm $mergeTrans
 touch $mergeTrans
 for transFile in $daily_transactions* ; do
@@ -44,6 +47,7 @@ for transFile in $daily_transactions* ; do
     echo "----------------------------------------------------------------------------------" >> $dailyTransRes
 done
 
+# does the same for every single day of transactions
 cd ./backend/
 make run
 

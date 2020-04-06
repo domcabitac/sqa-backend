@@ -1,6 +1,12 @@
 login
 bob
 password
+delete
+bobby
+advertise
+Scooter
+500
+99
 refund
 John
 Test

@@ -1,0 +1,519 @@
+Day 1 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+____________________________________________________________________________________
+Day 2 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+____________________________________________________________________________________
+Day 3 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+____________________________________________________________________________________
+Day 4 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+____________________________________________________________________________________
+Day 5 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+____________________________________________________________________________________
+Day 1 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+----------------------------------------------------------------------------------
+Day 2 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+03 Scooter                   Bob             099 500.00
+05 Test            John            000500.00
+00
+----------------------------------------------------------------------------------
+Day 3 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+03 Scooter                   Bob             099 500.00
+05 Test            John            000500.00
+00
+----------------------------------------------------------------------------------
+Day 4 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+03 Scooter                   Bob             099 500.00
+05 Test            John            000500.00
+00
+00
+----------------------------------------------------------------------------------
+Day 5 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+03 Scooter                   Bob             099 500.00
+05 Test            John            000500.00
+00
+00
+00
+----------------------------------------------------------------------------------
+Day 1 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+03 Scooter                   Bob             099 500.00
+05 Test            John            000500.00
+00
+00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+----------------------------------------------------------------------------------
+Day 2 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+03 Scooter                   Bob             099 500.00
+05 Test            John            000500.00
+00
+00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+03 Scooter                   Bob             099 500.00
+05 Test            John            000500.00
+00
+----------------------------------------------------------------------------------
+Day 3 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+03 Scooter                   Bob             099 500.00
+05 Test            John            000500.00
+00
+00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+03 Scooter                   Bob             099 500.00
+05 Test            John            000500.00
+00
+----------------------------------------------------------------------------------
+Day 4 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+03 Scooter                   Bob             099 500.00
+05 Test            John            000500.00
+00
+00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+03 Scooter                   Bob             099 500.00
+05 Test            John            000500.00
+00
+00
+----------------------------------------------------------------------------------
+Day 5 Transactions
+00
+02 bobby           SS 000000.00
+03 Scooter                   Bob             099 500.00
+00
+00
+00
+05 Test            John            000500.00
+00
+03 Laptop                    Test            050 100.00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+05 Test            John            000500.00
+00
+06 John            FS 000740.00
+00
+02 bobby           SS 000470.00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+03 Scooter                   Bob             099 500.00
+05 Test            John            000500.00
+00
+00
+00
+01 dom             FS 000500.00
+03 Scooter                   Bob             099 500.00
+00
+03 Scooter                   Bob             099 500.00
+05 Test            John            000500.00
+00
+00
+00
+----------------------------------------------------------------------------------

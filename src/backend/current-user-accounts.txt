@@ -1,8 +1,8 @@
 Bob             AA 000460.000 password
-Test            FS 0020005.10 passward
-John            FS 000540.000 passward
+Test            FS 036505.010 passward
+John            FS 000320.000 passward
 Mart            BS 0000000.00 password
-bobby           SS 0000470.00 password
 testerUser      BS 0007500.00 password
 leon            FS 0000005.00 password
+dom             FS 0000500.00 password
 END

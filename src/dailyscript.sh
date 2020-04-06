@@ -10,13 +10,16 @@ mergeTrans="./backend/mergeTrans.txt"
 tempUser="./backend/tempUser.txt"
 tempItem="./backend/tempItem.txt"
 
+# remove and create a new temporary user file
 rm $tempUser
 touch $tempUser
+# loop through each user file in current users directory and copies it to tempUser file
 for uFile in $current_users* ; do
     echo $uFile
     cat $uFile >> $tempUser
 done
 
+#remove and create a new temporary item file
 rm $tempItem
 touch $tempItem
 for iFile in $available_items* ; do
@@ -40,6 +43,7 @@ done
 ## Day 5
 # ./frontend/./RUN_FRONTEND $tempItem $tempUser $daily_transactions < $test_input5
 
+# remove and make a new merged transaction file, then iterates through each transaction file in the daily transaction
 rm $mergeTrans
 touch $mergeTrans
 for transFile in $daily_transactions* ; do
@@ -47,8 +51,8 @@ for transFile in $daily_transactions* ; do
     cat $transFile >> $mergeTrans
 done
 
-
 cat $mergeTrans
 
+# change to backend directory and runs the merged transactions
 cd ./backend/
 make run

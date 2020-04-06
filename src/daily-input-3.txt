@@ -1,6 +1,9 @@
 login
 Test
 passward
+bid
+Scooter
+550
 advertise
 Laptop
 50

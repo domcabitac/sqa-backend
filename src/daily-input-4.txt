@@ -1,8 +1,9 @@
 login
-bob
+Mart
 password
-addCredit
+bid
 John
-200
+macbook pro 16 i7 silver
+700
 logout
 exit
