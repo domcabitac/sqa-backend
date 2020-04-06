@@ -5,6 +5,7 @@
 # make
 # cd ..
 
+# script parameters
 available_items="./frontend/available-items.txt"
 current_users="./frontend/current-user-accounts.txt"
 daily_transactions="./frontend/daily-transactions.txt"
@@ -15,15 +16,19 @@ tempItem="./backend/tempItem.txt"
 dailyTransRes="Daily_Transactions_Results.txt"
 itemResult="Item_Results.txt"
 
+# removes and makes a new tempUser file
 rm $tempUser
 touch $tempUser
+# appends uFile contents to tempUser
 for uFile in $current_users* ; do
     echo $uFile
     cat $uFile >> $tempUser
 done
 
+# removes and makes a new tempItem file
 rm $tempItem
 touch $tempItem
+# appends iFile contents to tempItem
 for iFile in $available_items* ; do
     echo $iFile
     cat $iFile >> $tempItem
@@ -32,8 +37,10 @@ for iFile in $available_items* ; do
     echo "\n----------------------------------------------------------------------------------" >> $itemResult
 done
 
+# runs the frontend with the provided temp files, also copies the contents of test_input as daily transactions
 ./frontend/./RUN_FRONTEND $tempItem $tempUser $daily_transactions < $test_input
 
+# repeats these for both transactions and items, all the same for each day
 rm $mergeTrans
 touch $mergeTrans
 for transFile in $daily_transactions* ; do
