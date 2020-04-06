@@ -6,14 +6,20 @@ Team Members:
 The purpose of this program is to perform the backend functions for the online auction house experience. The intentions of this program are to take in 3 input files: MergedTransactions.txt, OldUsers.txt and OldItems.txt, and place them into 3 seperate buffer vectors for the OutputWriter to use. The OutputWriter will process the merged transactions one by one on the corresponding file that will be determined by a method. After running all transactions, the program will return the updated files associated with an error log for any transaction or file failures. The program is intended to be run by compiling this java file, OutputWriter.java, and running it with java. The program will later be integrated with the frontend to update the files concurrently. 
 
 # Phase 6
-To run daily script, execute the following commands in the `sqa-backend/src directory`
+We have successfully wrote two scripts to merge both frontend and backend. The `dailyscript.sh` file will merge frontend and backend with a list of daily inputs, also merging them to a merged transaction file and run this merged file with the items and users file.
+The `fullscript.sh` file will do the same as `dailyscript.sh`, except that it will run it 5 times to simulate 5 days of operation. The 
+`Daily_Transactions_Results.txt` file will be populated with all the daily transactions and the `Item_Results.txt` file will be populated with the items after 5 days of operation.  
+                  
+**NOTE: Upon pulling this repo, both files will be empty. You will need to run both daily script or weekly script to populate this file.**
+
+To run the daily script, execute the following commands in the `sqa-backend/src directory`
 1. `sh dailyscript.sh`
 
-To run weekly script, execute the following commands in the `sqa-backend/src directory`
+To run the weekly script, execute the following commands in the `sqa-backend/src directory`
 1. `sh fullscript.sh`
 
-## What works and what does not work
-Bidding does not work, due to an error in the frontend system. 
+## Bug Report 
+There is an issue with Bidding right now, you need to enter the exact amount of spaces when trying to make a bid in the frontend. The backend will correctly process a bid though, if it happens.
 
 # Phase 5
 To compile and run the program, execute the following commands in the `sqa-backend directory`:
