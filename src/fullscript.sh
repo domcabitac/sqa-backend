@@ -16,9 +16,17 @@ tempItem="./backend/tempItem.txt"
 dailyTransRes="Daily_Transactions_Results.txt"
 itemResult="Item_Results.txt"
 
+cd frontend 
+make
+cd ../
+
 # removes and makes a new tempUser file
 rm $tempUser
 touch $tempUser
+
+truncate -s 0 $daily_transactions
+truncate -s 0 $dailyTransRes
+
 # appends uFile contents to tempUser
 for uFile in $current_users* ; do
     echo $uFile
